@@ -1,4 +1,4 @@
-let isRaining = true
+const isRaining = true
 
 isRaining = false
 
