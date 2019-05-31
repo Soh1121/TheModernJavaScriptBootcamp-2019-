@@ -3,6 +3,6 @@ const person = {
 }
 
 person.age = 28
-person = {}
+// person = {}
 
 console.log(person)
