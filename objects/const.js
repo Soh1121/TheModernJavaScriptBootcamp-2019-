@@ -1,5 +1,8 @@
-const isRaining = true
+const person = {
+    age: 27
+}
 
-// isRaining = false
+person.age = 28
+// person = {}
 
-console.log(isRaining)
+console.log(person)
