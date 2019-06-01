@@ -1,5 +1,5 @@
 if (10 === 10) {
-    var firstName = 'Jen'
+    let firstName = 'Jen'
 }
 
 console.log(firstName)
