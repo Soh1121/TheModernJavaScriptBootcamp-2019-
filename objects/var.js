@@ -1,6 +1,5 @@
-var firstName = 'Andrew'
-firstName = 'Mike'
-
-var firstName = 'Jen'
+if (10 === 10) {
+    var firstName = 'Jen'
+}
 
 console.log(firstName)
