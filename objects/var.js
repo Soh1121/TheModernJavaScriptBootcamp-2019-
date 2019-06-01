@@ -1,5 +1,6 @@
-if (10 === 10) {
-    let firstName = 'Jen'
+const setName = function () {
+    var firstName = 'Jen'
 }
 
+setName()
 console.log(firstName)
