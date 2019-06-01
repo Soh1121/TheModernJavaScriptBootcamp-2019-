@@ -1,2 +1,2 @@
 console.log(age)
-var age
+let age
