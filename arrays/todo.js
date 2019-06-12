@@ -1,20 +1,17 @@
 const todos = ['Order cat food', 'Clean kitchen', 'Buy food', 'Do work', 'Exercise']
 
-console.log(`You have ${todos.length} todos!`)
-console.log(`Todo: ${todos[0]}`)
-console.log(`Todo: ${todos[1]}`)
-console.log(`Todo: ${todos[todos.length - 1]}`)
-
-// Create an array with five todos
-// You have x todos
-// Print the first and second to last items -> Todo: walk the dog
+todos.splice(2, 1)
+todos.push('Buy coffee')
+todos.shift()
 
 /*
-const todo = [
-    'todo 1', 'todo 2', 'todo 3', 'todo 4', 'walk the dog'
-]
+// Delete the 3rd item
+todos.splice(2, 1)
+// Add a new item onto the end
+todos.push('New item')
+// Remove the first item from the list
+todos.shift()
+ */
 
-console.log(todo[0])
-console.log(todo[1])
-console.log(todo[todo.length - 1])
-*/
+console.log(`You have ${todos.length} todos!`)
+console.log(todos)
