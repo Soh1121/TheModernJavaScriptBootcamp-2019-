@@ -4,6 +4,7 @@ console.log(notes.pop())
 notes.push('My new note')
 
 console.log(notes.shift())
+notes.unshift('My first note')
 
 console.log(notes.length)
 console.log(notes)
