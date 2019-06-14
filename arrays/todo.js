@@ -13,6 +13,13 @@ todos.forEach(function (todo, index) {
 // 1. The first item
 // 2. The second item
 // ...
-for (let count = 1; count <= todos.length; count++) {
+/* for (let count = 1; count <= todos.length; count++) {
     console.log(`${count}. ${todos[count - 1]}`)
 }
+ */
+
+ for (let count = 0; count < todos.length; count++) {
+    const num = count + 1
+    const todo = todos[count]
+    console.log(`${num}. ${todo}`)
+ }
