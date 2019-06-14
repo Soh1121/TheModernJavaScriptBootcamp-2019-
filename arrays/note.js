@@ -10,5 +10,9 @@ notes.unshift('My first note') */
 
 notes[2] = 'This is now the new note 3'
 
+notes.forEach(function () {
+    console.log('rwarinf123')
+})
+
 console.log(notes.length)
 console.log(notes)
