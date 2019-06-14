@@ -4,14 +4,15 @@ todos.splice(2, 1)
 todos.push('Buy coffee')
 todos.shift()
 
-/*
-// Delete the 3rd item
-todos.splice(2, 1)
-// Add a new item onto the end
-todos.push('New item')
-// Remove the first item from the list
-todos.shift()
- */
-
 console.log(`You have ${todos.length} todos!`)
-console.log(todos)
+todos.forEach(function (todo, index) {
+    const num = index + 1
+    console.log(`${num}. ${todo}`)
+})
+
+// 1. The first item
+// 2. The second item
+/* todos.forEach(function (item, index) {
+    console.log(`${index + 1}. ${item}`)
+})
+ */
