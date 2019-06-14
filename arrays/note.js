@@ -10,7 +10,8 @@ notes.unshift('My first note') */
 
 notes[2] = 'This is now the new note 3'
 
-notes.forEach(function (item) {
+notes.forEach(function (item, index) {
+    console.log(index)
     console.log(item)
 })
 
