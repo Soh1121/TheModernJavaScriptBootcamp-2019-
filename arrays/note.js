@@ -16,7 +16,7 @@ const findNote = function (notes, noteTitle) {
     return notes[index]
 }
 
-const note = findNote(notes, 'Office modification')
+const note = findNote(notes, 'office modification')
 console.log(note)
 
 /* console.log(notes.length)
