@@ -45,5 +45,5 @@ todos.forEach(function (value) {
 todos = todos_hash
 */
 
-deleteTodo(todos, 'buy food')
+deleteTodo(todos, '!!buy food')
 console.log(todos)
