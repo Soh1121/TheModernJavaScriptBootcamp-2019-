@@ -27,4 +27,6 @@ notes.forEach(function (item, index) {
 console.log(notes.length)
 console.log(notes)
 
-console.log(notes.indexOf({}))
+notes.findIndex(function (note, index) {
+    console.log(note)
+})
