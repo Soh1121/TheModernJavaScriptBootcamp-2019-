@@ -29,5 +29,6 @@ console.log(notes)
 
 const index = notes.findIndex(function (note, index) {
     console.log(note)
+    return note.title === 'Habbits to work on'
 })
 console.log(index)
