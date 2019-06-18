@@ -27,10 +27,16 @@ const deleteTodo = function (todos, todoText) {
 
 const getThingsToDo = function (todos) {
     return todos.filter(function (todo) {
-        return !todo.completed
+        return todo.completed === false
     })
 }
 
+/* const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return !todo.completed
+    })
+}
+ */
 console.log(getThingsToDo(todos))
 
 /* deleteTodo(todos, '!!buy food')
