@@ -16,7 +16,7 @@ const findNote = function (notes, noteTitle) {
 }
 
 const filteredNotes = notes.filter(function (note, index) {
-    return true
+    return false
 })
 console.log(filteredNotes)
 
