@@ -15,6 +15,11 @@ const findNote = function (notes, noteTitle) {
     })
 }
 
+const filteredNotes = notes.filter(function (note, index) {
+    return true
+})
+console.log(filteredNotes)
+
 /* const findNote = function (notes, noteTitle) {
     const index = notes.findIndex(function (note, index) {
         return note.title.toLowerCase() === noteTitle.toLowerCase()
