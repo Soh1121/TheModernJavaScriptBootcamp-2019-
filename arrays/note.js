@@ -16,7 +16,9 @@ const findNote = function (notes, noteTitle) {
 }
 
 const filteredNotes = notes.filter(function (note, index) {
-    return false
+    const isTitleMatch = note.title.toLowerCase().includes('ne')
+    const isBodyMatch = note.body.toLowerCase().includes('ne')
+    return isTitleMatch || isBodyMatch
 })
 console.log(filteredNotes)
 
