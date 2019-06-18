@@ -27,7 +27,7 @@ const deleteTodo = function (todos, todoText) {
 
 const getThingsToDo = function (todos) {
     return todos.filter(function (todo) {
-        return todo.completed === false
+        return !todo.completed
     })
 }
 
