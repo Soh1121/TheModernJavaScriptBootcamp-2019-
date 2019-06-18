@@ -3,7 +3,7 @@ const todos = [{
     completed: true
 }, {
     text: 'Clean kitchen',
-    completed: false
+    completed: true
 }, {
     text: 'Buy food',
     completed: true
