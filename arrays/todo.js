@@ -31,13 +31,28 @@ const getThingsToDo = function (todos) {
     })
 }
 
+const sortTodos = function (todos) {
+    todos.sort(function (a, b) {
+        if (a.text.toLowerCase() < b.text.toLowerCase()) {
+            return -1
+        } else if (b.text.toLowerCase() < a.text.toLowerCase()) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
+sortTodos(todos)
+console.log(todos)
+
 /* const getThingsToDo = function (todos) {
     return todos.filter(function (todo) {
         return !todo.completed
     })
 }
  */
-console.log(getThingsToDo(todos))
-
+/* console.log(getThingsToDo(todos))
+ */
 /* deleteTodo(todos, '!!buy food')
 console.log(todos) */
