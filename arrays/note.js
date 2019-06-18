@@ -1,5 +1,5 @@
 const notes = [{
-    title: 'My next trip',
+    title: 'my next trip',
     body: 'I would like to go to Spain'
 }, {
     title: 'Habbits to work on',
