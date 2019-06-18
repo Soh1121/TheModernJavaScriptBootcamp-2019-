@@ -23,7 +23,7 @@ const findNotes = function (notes, query) {
     })
 }
 
-console.log(findNotes(notes, 'work'))
+console.log(findNotes(notes, 'eating'))
 
 /* const findNote = function (notes, noteTitle) {
     const index = notes.findIndex(function (note, index) {
