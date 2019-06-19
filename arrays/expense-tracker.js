@@ -12,7 +12,7 @@ const account = {
         this.expenses.forEach(function (expense) {
             total += expense.amount
         })
-        return `${account.name} has $${total} in expenses`
+        return `${this.name} has $${total} in expenses`
     }
 }
 
