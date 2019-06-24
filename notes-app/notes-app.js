@@ -1,1 +1,4 @@
-console.log('This is from a different file')
+// DOM - Document Object Model
+
+const p = document.querySelector('p')
+console.log(p)
