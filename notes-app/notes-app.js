@@ -8,5 +8,6 @@ p.remove() */
 const ps = document.querySelectorAll('p')
 
 ps.forEach(function (p) {
-    p.remove()
+    console.log(p.textContent)
+    // p.remove()
 })
