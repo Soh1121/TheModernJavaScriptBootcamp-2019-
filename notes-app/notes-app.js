@@ -1,4 +1,5 @@
 // DOM - Document Object Model
 
-const p = document.querySelector('h1')
+// Query and remove
+const p = document.querySelector('p')
 p.remove()
