@@ -1,6 +1,6 @@
 const todos = [{
     text: 'Order cat food',
-    completed: true
+    completed: false
 }, {
     text: 'Clean kitchen',
     completed: true
@@ -15,10 +15,16 @@ const todos = [{
     completed: true
 }]
 
-const ps = document.querySelectorAll('p')
+// You have 2 todos left (p element)
+// Add a p for each to above (use value)
 
-ps.forEach(function (p) {
-    if (p.textContent.indexOf('the') != -1) {
-        p.remove()
-    }
+const leftTodos = todos.filter(function (todo) {
+    return !todo.completed
+})
+
+console.log(leftTodos)
+leftTodos.forEach(function (todo) {
+    const newParagraph = document.createElement('p')
+    newParagraph.textContent = todo.text
+    document.querySelector('body').appendChild(newParagraph)
 })
