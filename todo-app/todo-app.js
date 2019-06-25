@@ -18,16 +18,8 @@ const todos = [{
 // You have 2 todos left (p element)
 // Add a p for each to above (use value)
 
-const leftTodos = todos.filter(function (todo) {
-    return !todo.completed
-})
-
-const summary = document.createElement('h2')
-summary.textContent = `You have ${leftTodos.length} todos left`
-document.querySelector('body').appendChild(summary)
-
-leftTodos.forEach(function (todo) {
+document.querySelector('button').addEventListener('click', function () {
     const newParagraph = document.createElement('p')
-    newParagraph.textContent = todo.text
+    newParagraph.textContent = todos.shift().text
     document.querySelector('body').appendChild(newParagraph)
 })
