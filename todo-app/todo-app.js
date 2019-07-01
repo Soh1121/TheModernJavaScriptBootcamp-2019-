@@ -23,3 +23,7 @@ document.querySelector('button').addEventListener('click', function () {
     newParagraph.textContent = todos.shift().text
     document.querySelector('body').appendChild(newParagraph)
 })
+
+document.querySelector('#add-todo').addEventListener('click', function (e) {
+    console.log('Add a new todo.')
+})
