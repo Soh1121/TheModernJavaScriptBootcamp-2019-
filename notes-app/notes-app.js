@@ -20,5 +20,5 @@ document.querySelector('#remove-all').addEventListener('click', function () {
 })
 
 document.querySelector('#search-text').addEventListener('change', function (e) {
-    console.log(e)
+    console.log(e.target.value)
 })
