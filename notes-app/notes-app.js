@@ -18,3 +18,7 @@ document.querySelector('#remove-all').addEventListener('click', function () {
         note.remove()
     })
 })
+
+document.querySelector('#search-text').addEventListener('change', function (e) {
+    console.log(e)
+})
