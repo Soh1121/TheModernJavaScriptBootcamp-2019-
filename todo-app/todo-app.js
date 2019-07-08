@@ -44,7 +44,7 @@ const renderTodos = function (todos, filters) {
     })
 
     document.querySelector('#todos').innerHTML = ''
-    
+
     filteredTodos.forEach(function (todo) {
         const todoEl = document.createElement('p')
         todoEl.textContent = todo.text
@@ -62,13 +62,18 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 
 // Ends
 
-// Listen for new todo creation
-document.querySelector('#add-todo').addEventListener('click', function (e) {
-    console.log('Add a new todo...')
-})
+// 1. Create a form with a single input for todo text
+// 2. Setup an submit handler and cancel the deafult action
+// 3. Add a new item to the todos array with that text data (completed value of false)
+// 4. Rerender the application
+// 5. Clear the input field value
 
-// Listen for todo text change
-document.querySelector('#new-todo-text').addEventListener('input', function (e) {
-    console.log(e.target.value)
+document.querySelector("#new-todo").addEventListener('submit', function (e) {
+    e.preventDefault()
+    todos.push({
+        text: e.target.elements.text.value,
+        completed: false
+    })
+    renderTodos(todos, filters)
+    e.target.elements.text.value = ''
 })
-
