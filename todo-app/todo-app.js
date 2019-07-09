@@ -15,38 +15,36 @@ const todos = [{
     completed: true
 }]
 
-const incompleteTodos = todos.filter(function (todo) {
-    return !todo.completed
-})
-
-const summary = document.createElement('h2')
-summary.textContent = `You have ${incompleteTodos.length} todos left`
-document.querySelector('body').appendChild(summary)
-
-todos.forEach(function (todo) {
-    const p = document.createElement('p')
-    p.textContent = todo.text
-    document.querySelector('body').appendChild(p)
-})
-
 const filters = {
     searchText: '',
     hideCompleted: false
 }
 
-    const renderTodos = function (todos, filters) {
-        const filteredTodos = todos.filter(function (todo) {
-            return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
-        })
+const renderTodos = function (todos, filters) {
+    let filteredTodos = todos.filter(function (todo) {
+        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+    })
 
-        document.querySelector('#todos').innerHTML = ''
+    filteredTodos = todos.filter(function (todo) {
+        return !filters.hideCompleted || !todo.completed
+    })
 
-        filteredTodos.forEach(function (todo) {
-            const todoEl = document.createElement('p')
-            todoEl.textContent = todo.text
-            document.querySelector('#todos').appendChild(todoEl)
-        })
-    }
+    const incompleteTodos = filteredTodos.filter(function (todo) {
+        return !todo.completed
+    })
+
+    document.querySelector('#todos').innerHTML = ''
+
+    const summary = document.createElement('h2')
+    summary.textContent = `You have ${incompleteTodos.length} todos left`
+    document.querySelector('#todos').appendChild(summary)
+
+    filteredTodos.forEach(function (todo) {
+        const p = document.createElement('p')
+        p.textContent = todo.text
+        document.querySelector('#todos').appendChild(p)
+    })
+}
 
 renderTodos(todos, filters)
 
@@ -72,19 +70,6 @@ document.querySelector("#new-todo").addEventListener('submit', function (e) {
 // 4. Setup renderTodos to remove completed items
 
 document.querySelector("#hide-completed").addEventListener('change', function (e) {
-    if (e.target.checked) {
-        const filteredTodos = todos.filter(function (todo) {
-            return !todo.completed
-        })
-
-        document.querySelector('#todos').innerHTML = ''
-
-        filteredTodos.forEach(function (todo) {
-            const todoEl = document.createElement('p')
-            todoEl.textContent = todo.text
-            document.querySelector('#todos').appendChild(todoEl)
-        })
-    } else {
-        renderTodos(todos, filters)
-    }
+    filters.hideCompleted = e.target.checked
+    renderTodos(todos, filters)
 })
