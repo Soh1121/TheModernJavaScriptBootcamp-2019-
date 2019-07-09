@@ -30,22 +30,23 @@ todos.forEach(function (todo) {
 })
 
 const filters = {
-    searchText: ''
+    searchText: '',
+    hideCompleted: false
 }
 
-const renderTodos = function (todos, filters) {
-    const filteredTodos = todos.filter(function (todo) {
-        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
+    const renderTodos = function (todos, filters) {
+        const filteredTodos = todos.filter(function (todo) {
+            return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        })
 
-    document.querySelector('#todos').innerHTML = ''
+        document.querySelector('#todos').innerHTML = ''
 
-    filteredTodos.forEach(function (todo) {
-        const todoEl = document.createElement('p')
-        todoEl.textContent = todo.text
-        document.querySelector('#todos').appendChild(todoEl)
-    })
-}
+        filteredTodos.forEach(function (todo) {
+            const todoEl = document.createElement('p')
+            todoEl.textContent = todo.text
+            document.querySelector('#todos').appendChild(todoEl)
+        })
+    }
 
 renderTodos(todos, filters)
 
