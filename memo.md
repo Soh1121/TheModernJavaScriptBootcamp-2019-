@@ -9,9 +9,7 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    
-  </head>
+  <head></head>
   <body>
     <form id="name-form">
       <input type="text" placeholder="First name" name="firstName">
@@ -31,4 +29,25 @@ document.querySelector('#name-form').addEventListener('submit', function (e) {
 ```
 
 ### Lecture59.Checkboxes
-- 
+- チェックボックスを作成
+- チェックボックスの値を取得（boolian：true/false）
+
+```:html
+<!DOCTYPE html>
+
+<html>
+  <head></head>
+  <body>
+    <label>
+      <input id="for-fun" type="checkbox">Check me for fun
+    </label>
+    <script src="notes-app.js"></script>
+  </body>
+</html>
+```
+
+```notes-app.js
+document.querySelector('#for-fun').addEventListener('change', function (e) {
+    console.log(e.target.checked)
+})
+```
