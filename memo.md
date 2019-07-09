@@ -30,7 +30,7 @@ document.querySelector('#name-form').addEventListener('submit', function (e) {
 
 ### Lecture59.Checkboxes
 - チェックボックスを作成
-- チェックボックスの値を取得（boolian：true/false）
+- チェックボックスの値を取得（boolean：true/false）
 
 ```:html
 <!DOCTYPE html>
