@@ -29,3 +29,6 @@ document.querySelector('#name-form').addEventListener('submit', function (e) {
     e.target.elements.firstName.value = ''
 })
 ```
+
+### Lecture59.Checkboxes
+- 
