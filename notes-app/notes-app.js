@@ -22,8 +22,8 @@ const filters = {
 // localStorage.setItem('user', userJSON)
 
 const userJSON = localStorage.getItem('user')
-const user = JSON.parse(userJSON)
-console.log(`${user.name} is ${user.age}`)
+//const user = JSON.parse(userJSON)
+console.log(`${userJSON.name} is ${userJSON.age}`)
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
