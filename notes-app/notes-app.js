@@ -15,9 +15,11 @@ const filters = {
 
 // localStorage.setItem('location', 'Philadelphia')
 
-console.log(localStorage.getItem('location'))
+// console.log(localStorage.getItem('location'))
 
-localStorage.removeItem('location')
+// localStorage.removeItem('location')
+
+localStorage.clear()
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
