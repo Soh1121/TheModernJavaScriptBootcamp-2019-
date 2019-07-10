@@ -19,6 +19,7 @@ const user = {
 }
 const userJSON = JSON.stringify(user)
 console.log(userJSON)
+localStorage.setItem('user', userJSON)
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
