@@ -96,3 +96,48 @@ document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value)
 })
 ```
+
+## Section8
+### Lecture62.Saving Our Data in LocalStorage: Part I
+- ローカルストレージにデータを保存
+  - `key: value` の形式で保存
+  - valueに保存できるのは数値・文字列
+  - オブジェクトを保存したいのであれば、文字列に変換してから
+
+#### ローカルストレージへのアクセス
+```sample.js
+// ローカルストレージへ保存
+localStrage.setItem('location', 'Philadelphia')
+
+// ローカルストレージから値を取得し、コンソールに表示
+console.log(localStrage.getItem('location'))
+
+// ローカルストレージから指定したkeyの値を削除
+localStrage.removeItem('location')
+
+// ローカルストレージを初期化
+localStrage.clear()
+```
+
+#### ローカルストレージへオブジェクトを保存
+```sample.js
+// サンプルデータ
+const user = {
+   name: 'Andrew',
+   age: 27
+}
+
+// 保存方法
+// オブジェクトを文字列に変換
+const userJSON = JSON.stringify(user)
+// 変換してから保存
+localStorage.setItem('user', userJSON)
+
+// 取得方法
+// データを取得
+const userJSON = localStorage.getItem('user')
+// データをパース
+const user = JSON.parse(userJSON)
+// コンソールに表示
+console.log(`${user.name} is ${user.age}`)
+```
