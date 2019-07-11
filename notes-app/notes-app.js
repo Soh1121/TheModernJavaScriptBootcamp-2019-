@@ -1,10 +1,8 @@
-let notes = []
+let notes = getSavedNotes()
 
 const filters = {
     searchText: ''
 }
-
-
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
