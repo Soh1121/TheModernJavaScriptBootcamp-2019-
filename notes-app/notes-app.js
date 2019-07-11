@@ -4,12 +4,7 @@ const filters = {
     searchText: ''
 }
 
-// Check for existing saved data
-const notesJSON = localStorage.getItem('notes')
 
-if (notesJSON !== null) {
-    notes = JSON.parse(notesJSON)
-}
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
