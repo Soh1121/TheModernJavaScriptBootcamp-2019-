@@ -1,4 +1,8 @@
-const todos = [{
+// 1. Delete dummy data
+// 2. Read and parse the data when the app starts up
+// 3. Stringify and write the adata when new data is added
+
+let todos = [/* {
     text: 'Order cat food',
     completed: false
 }, {
@@ -13,7 +17,7 @@ const todos = [{
 }, {
     text: 'Exercise',
     completed: true
-}]
+} */]
 
 const filters = {
     searchText: '',
@@ -21,6 +25,11 @@ const filters = {
 }
 
 const renderTodos = function (todos, filters) {
+    const todosJSON = localStorage.getItem('todos')
+    if (todosJSON !== null) {
+        todos = JSON.parse(todosJSON)
+    }
+
     let filteredTodos = todos.filter(function (todo) {
         return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
     })
@@ -60,6 +69,7 @@ document.querySelector("#new-todo").addEventListener('submit', function (e) {
         text: e.target.elements.text.value,
         completed: false
     })
+    localStorage.setItem('todos', JSON.stringify(todos))
     renderTodos(todos, filters)
     e.target.elements.text.value = ''
 })
