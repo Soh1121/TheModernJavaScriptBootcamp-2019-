@@ -4,19 +4,6 @@ const filters = {
     searchText: ''
 }
 
-const renderNotes = function (notes, filters) {
-    const filteredNotes = notes.filter(function (note) {
-        return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
-
-    document.querySelector('#notes').innerHTML = ''
-
-    filteredNotes.forEach(function (note) {
-        const noteEl = generateNoteDOM(note)
-        document.querySelector('#notes').appendChild(noteEl)
-    })
-}
-
 renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function (e) {
