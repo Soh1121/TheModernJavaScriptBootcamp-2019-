@@ -16,17 +16,13 @@ const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
-
+        debugger
         return searchTextMatch && hideCompletedMatch
     })
-
-    debugger
 
     const incompleteTodos = filteredTodos.filter(function (todo) {
         return !todo.completed
     })
-
-    debugger
 
     document.querySelector('#todos').innerHTML = ''
     document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
