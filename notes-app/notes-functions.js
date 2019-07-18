@@ -20,14 +20,13 @@ const generateNoteDOM = function (note) {
     const button = document.createElement('button')
 
     button.textContent = 'x'
-
+    noteEl.appendChild(button)
+    
     if (note.title.length > 0) {
         noteEl.textContent = note.title
     } else {
         noteEl.textContent = 'Unnamed note'
     }
-
-    noteEl.appendChild(button)
 
     return noteEl
 }
