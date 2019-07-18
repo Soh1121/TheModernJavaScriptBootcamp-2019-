@@ -40,6 +40,9 @@ const generateTodoDOM = function (todo) {
     const span = document.createElement('span')
     span.textContent = todo.text
     div.appendChild(span)
+    const button = document.createElement('button')
+    button.textContent = 'x'
+    div.appendChild(button)
     return div
 }
 
