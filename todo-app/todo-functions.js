@@ -1,4 +1,3 @@
-// Fetch existing todos from localStorage
 const getSavedTodos = function () {
     const todosJSON = localStorage.getItem('todos')
 
@@ -9,42 +8,46 @@ const getSavedTodos = function () {
     }
 }
 
-// Save todos to localStorage
 const saveTodos = function (todos) {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
-// Render application todos based on filters
 const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
-
+        
         return searchTextMatch && hideCompletedMatch
     })
 
-    document.querySelector('#todos').innerHTML = ''
-
-    generateSummaryDOM(filteredTodos)
-    generateTodoDOM(filteredTodos)
-}
-
-// Get the DOM elements for an individual note
-const generateTodoDOM = function (filteredTodos) {
-    filteredTodos.forEach(function (todo) {
-        const p = document.createElement('p')
-        p.textContent = todo.text
-        document.querySelector('#todos').appendChild(p)
-    })
-}
-
-// Get the DOM elements for list summary
-const generateSummaryDOM = function (filteredTodos) {
     const incompleteTodos = filteredTodos.filter(function (todo) {
         return !todo.completed
     })
 
+    document.querySelector('#todos').innerHTML = ''
+    document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
+
+    filteredTodos.forEach(function (todo) {
+        document.querySelector('#todos').appendChild(generateTodoDOM(todo))
+    })
+}
+
+const generateTodoDOM = function (todo) {
+    const div = document.createElement('div')
+    const input = document.createElement('input')
+    input.setAttribute('type', 'checkbox')
+    div.appendChild(input)
+    const span = document.createElement('span')
+    span.textContent = todo.text
+    div.appendChild(span)
+    const button = document.createElement('button')
+    button.textContent = 'x'
+    div.appendChild(button)
+    return div
+}
+
+const generateSummaryDOM = function (incompleteTodos) {
     const summary = document.createElement('h2')
     summary.textContent = `You have ${incompleteTodos.length} todos left`
-    document.querySelector('#todos').appendChild(summary)
+    return summary
 }
