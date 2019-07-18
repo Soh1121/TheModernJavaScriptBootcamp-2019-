@@ -1,6 +1,7 @@
 let todos = []
 
 const filters = {
+    id: uuidv4(),
     searchText: '',
     hideCompleted: false
 }
