@@ -42,6 +42,16 @@ const generateTodoDOM = function (todo) {
     const todoText = document.createElement('span')
     const removeButton = document.createElement('button')
 
+    const removeTodo = function (id) {
+        const todoIndex = todos.findIndex(function (todo) {
+            return todo.id === id
+        })
+
+        if (todoIndex > -1) {
+            todos.splice(todoIndex, 1)
+        }
+    }
+
     // Setup todo checkbox
     checkbox.setAttribute('type', 'checkbox')
     todoEl.appendChild(checkbox)
@@ -53,6 +63,10 @@ const generateTodoDOM = function (todo) {
     // Setup the remove button
     removeButton.textContent = 'x'
     todoEl.appendChild(removeButton)
+    removeButton.addEventListener('click', function (e) {
+        removeTodo(todo.id)
+        renderTodos(todos, filters)
+    })
 
     return todoEl
 }
