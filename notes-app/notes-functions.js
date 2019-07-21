@@ -23,6 +23,9 @@ const generateNoteDOM = function (note) {
     // Setup the remove note button
     button.textContent = 'x'
     noteEl.appendChild(button)
+    button.addEventListener('click', function (e) {
+        console.log(note)
+    })
     
     // Setup the note titile text
     if (note.title.length > 0) {
