@@ -20,9 +20,24 @@ const generateNoteDOM = function (note) {
     const textEl = document.createElement('span')
     const button = document.createElement('button')
 
+    // Remove a note from the list
+    const removeNote = function (id) {
+        const noteIndex = notes.findIndex(function (note) {
+            return note.id === id
+        })
+
+        if (noteIndex > -1) {
+            notes.splice(noteIndex, 1)
+        }
+    }
+
     // Setup the remove note button
     button.textContent = 'x'
     noteEl.appendChild(button)
+    button.addEventListener('click', function (e) {
+        removeNote(note.id)
+        renderNotes(notes, filters)
+    })
     
     // Setup the note titile text
     if (note.title.length > 0) {

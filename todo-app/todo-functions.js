@@ -1,3 +1,7 @@
+// 1. Wire up button event
+// 2. Remove todo by id
+// 3. Save and rerender the todos list
+
 const getSavedTodos = function () {
     const todosJSON = localStorage.getItem('todos')
 
@@ -16,7 +20,7 @@ const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
-        
+
         return searchTextMatch && hideCompletedMatch
     })
 
@@ -33,17 +37,39 @@ const renderTodos = function (todos, filters) {
 }
 
 const generateTodoDOM = function (todo) {
-    const div = document.createElement('div')
-    const input = document.createElement('input')
-    input.setAttribute('type', 'checkbox')
-    div.appendChild(input)
-    const span = document.createElement('span')
-    span.textContent = todo.text
-    div.appendChild(span)
-    const button = document.createElement('button')
-    button.textContent = 'x'
-    div.appendChild(button)
-    return div
+    const todoEl = document.createElement('div')
+    const checkbox = document.createElement('input')
+    const todoText = document.createElement('span')
+    const removeButton = document.createElement('button')
+
+    const removeTodo = function (id) {
+        const todoIndex = todos.findIndex(function (todo) {
+            return todo.id === id
+        })
+
+        if (todoIndex > -1) {
+            todos.splice(todoIndex, 1)
+        }
+    }
+
+    // Setup todo checkbox
+    checkbox.setAttribute('type', 'checkbox')
+    todoEl.appendChild(checkbox)
+
+    // Setup the todo text
+    todoText.textContent = todo.text
+    todoEl.appendChild(todoText)
+
+    // Setup the remove button
+    removeButton.textContent = 'x'
+    todoEl.appendChild(removeButton)
+    removeButton.addEventListener('click', function (e) {
+        removeTodo(todo.id)
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
+
+    return todoEl
 }
 
 const generateSummaryDOM = function (incompleteTodos) {
