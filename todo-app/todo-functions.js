@@ -52,9 +52,24 @@ const generateTodoDOM = function (todo) {
         }
     }
 
+    const checkTodo = function (id) {
+        const todoIndex = todos.findIndex(function (todo) {
+            return todo.id === id
+        })
+
+        if (todoIndex > -1) {
+            todos[todoIndex].completed = !todos[todoIndex].completed
+        }
+    }
+
     // Setup todo checkbox
     checkbox.setAttribute('type', 'checkbox')
+    checkbox.checked = todo.completed
     todoEl.appendChild(checkbox)
+    checkbox.addEventListener('click', function (e) {
+        checkTodo(todo.id)
+        saveTodos(todos)
+    })
 
     // Setup the todo text
     todoText.textContent = todo.text
