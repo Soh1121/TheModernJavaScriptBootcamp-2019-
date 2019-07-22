@@ -1,6 +1,6 @@
-// 1. Wire up button event
-// 2. Remove todo by id
-// 3. Save and rerender the todos list
+// 1. Add event handler to checkbox
+// 2. Modify the correct objects completed property -> toggleTodo
+// 3. Save and rerender
 
 const getSavedTodos = function () {
     const todosJSON = localStorage.getItem('todos')
@@ -52,7 +52,7 @@ const generateTodoDOM = function (todo) {
         }
     }
 
-    const checkTodo = function (id) {
+    const toggleTodo = function (id) {
         const todoIndex = todos.findIndex(function (todo) {
             return todo.id === id
         })
@@ -67,8 +67,9 @@ const generateTodoDOM = function (todo) {
     checkbox.checked = todo.completed
     todoEl.appendChild(checkbox)
     checkbox.addEventListener('click', function (e) {
-        checkTodo(todo.id)
+        toggleTodo(todo.id)
         saveTodos(todos)
+        renderTodos(todos, filters)
     })
 
     // Setup the todo text
