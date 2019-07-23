@@ -7,14 +7,14 @@ const filters = {
 renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function (e) {
+    const id = generateUuid()
     notes.push({
-        id: generateUuid(),
+        id: id,
         title: '',
         body: ''
     })
     saveNotes(notes)
-    const editUrl = './edit.html#' + notes[notes.length - 1].id
-    location.assign(editUrl)
+    location.assign(`./edit.html#${id}`)
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
