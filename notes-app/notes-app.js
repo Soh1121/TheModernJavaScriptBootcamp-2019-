@@ -13,7 +13,8 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
         body: ''
     })
     saveNotes(notes)
-    location.assign('./edit.html')
+    const editUrl = './edit.html#' + notes[notes.length - 1].id
+    location.assign(editUrl)
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
