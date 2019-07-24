@@ -23,7 +23,6 @@ const removeNote = function (id) {
     if (noteIndex > -1) {
         notes.splice(noteIndex, 1)
     }
-    saveNotes(notes)
 }
 
 // Generate the DOM structure for a note
