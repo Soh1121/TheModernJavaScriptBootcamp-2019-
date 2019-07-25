@@ -141,3 +141,16 @@ const user = JSON.parse(userJSON)
 // コンソールに表示
 console.log(`${user.name} is ${user.age}`)
 ```
+
+### Lecture73.Syncing Data Across Pages
+- ウインドウサイズを取得
+  - ウインドウの高さ `window.innerHeight`
+  - ウインドウの幅 `window.innerWidth`
+- ローカルストレージの変更をイベントとして取得
+  - これを活用してページ間のデータ同期を実現
+
+```javascript
+window.addEventListener('storage', function (e) {
+    console.log('some data changed')
+})
+```
