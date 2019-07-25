@@ -2,8 +2,8 @@ const titleElement = document.querySelector('#note-title')
 const bodyElement = document.querySelector('#note-body')
 const removeElement = document.querySelector('#remove-note')
 const noteId = location.hash.substring(1)
-const notes = getSavedNotes()
-const note = notes.find(function (note) {
+let notes = getSavedNotes()
+let note = notes.find(function (note) {
     return note.id === noteId
 })
 
@@ -31,5 +31,17 @@ document.querySelector('#remove-note').addEventListener('click', function (e) {
 })
 
 window.addEventListener('storage', function (e) {
-    console.log('some data changed')
+    if (e.key === 'notes') {
+        notes = JSON.parse(e.newValue)
+        note = notes.find(function (note) {
+            return note.id === noteId
+        })
+        
+        if (note === undefined) {
+            location.assign('./index.html')
+        }
+
+        titleElement.value = note.title
+        bodyElement.value = note.body
+    }
 })
