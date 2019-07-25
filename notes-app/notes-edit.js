@@ -30,6 +30,6 @@ document.querySelector('#remove-note').addEventListener('click', function (e) {
     location.assign('./index.html')
 })
 
-window.addEventListener('click', function (e) {
-    console.log('clicked')
+window.addEventListener('storage', function (e) {
+    console.log('some data changed')
 })
