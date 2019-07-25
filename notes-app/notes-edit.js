@@ -29,3 +29,7 @@ document.querySelector('#remove-note').addEventListener('click', function (e) {
     saveNotes(notes)
     location.assign('./index.html')
 })
+
+window.addEventListener('click', function (e) {
+    console.log('clicked')
+})
