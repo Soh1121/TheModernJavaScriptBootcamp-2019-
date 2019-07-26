@@ -36,7 +36,10 @@ window.addEventListener('storage', function (e) {
 // Unix Epoch - January 1st 1970 00:00:00
 
 const now = new Date()
-console.log(now.getTime())
+const timestamp = now.getTime()
+
+const myDate = new Date(timestamp)
+console.log(myDate.getFullYear())
 
 /* console.log(`Year: ${now.getFullYear()}`)
 console.log(`Month: ${now.getMonth()}`)
@@ -45,3 +48,20 @@ console.log(`Hour: ${now.getHours()}`)
 console.log(`Minute: ${now.getMinutes()}`)
 console.log(`Seconds: ${now.getSeconds()}`)
  */
+
+ // 1. Create two dates in th past (use string for Date)
+ // 2. Get timestamps for both
+ // 3. Figure out which is first and print its time (use toString)
+const datesOne = new Date('January 21, 2019 01:00:00')
+const datesTwo = new Date('June 16, 2018 02:00:00')
+
+const timestampOne = datesOne.getTime()
+const timestampTwo = datesTwo.getTime()
+
+const oneDate = new Date(timestampOne)
+const twoDate = new Date(timestampTwo)
+if (oneDate < twoDate) {
+    console.log(oneDate.getTime())
+} else {
+    console.log(twoDate.getTime())
+}
