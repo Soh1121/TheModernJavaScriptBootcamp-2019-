@@ -38,3 +38,4 @@ console.log(now.toString())
 
 console.log(`Year: ${now.getFullYear()}`)
 console.log(`Month: ${now.getMonth()}`)
+console.log(`Day of month: ${now.getDate()}`)
