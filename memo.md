@@ -154,3 +154,29 @@ window.addEventListener('storage', function (e) {
     console.log('some data changed')
 })
 ```
+
+#### Lecture74.JavaScript Dates
+- 現在時刻を取得（年・月・日・時・分・秒・曜日・TZ）
+
+```javascript
+// 現在時刻の取得
+const now = new Date()
+// 表示するには文字列に変換
+console.log(now.toString())
+
+// 年を文字列で抽出
+console.log(`Year: ${now.getFullYear()}`)
+// 月を文字列で抽出
+console.log(`Month: ${now.getMonth()}`)
+// 日を文字列で抽出
+console.log(`Day of month: ${now.getDate()}`)
+// 時を文字列で抽出
+console.log(`Hour: ${now.getHours()}`)
+// 分を文字列で抽出
+console.log(`Minute: ${now.getMinutes()}`)
+// 秒を文字列で抽出
+console.log(`Seconds: ${now.getSeconds()}`)
+
+// 特定の日時を生成
+const now = new Date('January 21 2001 6:25:01')
+```
