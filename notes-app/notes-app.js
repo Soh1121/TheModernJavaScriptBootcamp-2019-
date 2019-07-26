@@ -36,3 +36,4 @@ window.addEventListener('storage', function (e) {
 const now = new Date()
 console.log(now.toString())
 
+console.log(`Year: ${now.getFullYear()}`)
