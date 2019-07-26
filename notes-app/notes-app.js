@@ -52,16 +52,13 @@ console.log(`Seconds: ${now.getSeconds()}`)
  // 1. Create two dates in th past (use string for Date)
  // 2. Get timestamps for both
  // 3. Figure out which is first and print its time (use toString)
-const datesOne = new Date('January 21, 2019 01:00:00')
-const datesTwo = new Date('June 16, 2018 02:00:00')
+const dateOne = new Date('March 1 2018 12:00:00')
+const dateTwo = new Date()
+const dateOneTimestamp = dateOne.getTime()
+const dateTwoTimestamp = dateTwo.getTime()
 
-const timestampOne = datesOne.getTime()
-const timestampTwo = datesTwo.getTime()
-
-const oneDate = new Date(timestampOne)
-const twoDate = new Date(timestampTwo)
-if (oneDate < twoDate) {
-    console.log(oneDate.getTime())
+if (dateOneTimestamp < dateTwoTimestamp) {
+    console.log(dateOne.toString())
 } else {
-    console.log(twoDate.getTime())
+    console.log(dateTwo.toString())
 }
