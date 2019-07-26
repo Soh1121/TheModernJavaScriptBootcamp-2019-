@@ -33,12 +33,15 @@ window.addEventListener('storage', function (e) {
     }
 })
 
-const now = new Date('January 21 2001 6:25:01')
-console.log(now.toString())
+// Unix Epoch - January 1st 1970 00:00:00
 
-console.log(`Year: ${now.getFullYear()}`)
+const now = new Date()
+console.log(now.getTime())
+
+/* console.log(`Year: ${now.getFullYear()}`)
 console.log(`Month: ${now.getMonth()}`)
 console.log(`Day of month: ${now.getDate()}`)
 console.log(`Hour: ${now.getHours()}`)
 console.log(`Minute: ${now.getMinutes()}`)
 console.log(`Seconds: ${now.getSeconds()}`)
+ */
