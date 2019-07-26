@@ -32,3 +32,7 @@ window.addEventListener('storage', function (e) {
         renderNotes(notes, filters)
     }
 })
+
+const now = new Date()
+console.log(now.toString())
+
