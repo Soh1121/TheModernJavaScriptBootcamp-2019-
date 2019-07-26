@@ -176,4 +176,7 @@ console.log(`Hour: ${now.getHours()}`)
 console.log(`Minute: ${now.getMinutes()}`)
 // 秒を文字列で抽出
 console.log(`Seconds: ${now.getSeconds()}`)
+
+// 特定の日時を生成
+const now = new Date('January 21 2001 6:25:01')
 ```

@@ -33,7 +33,7 @@ window.addEventListener('storage', function (e) {
     }
 })
 
-const now = new Date()
+const now = new Date('January 21 2001 6:25:01')
 console.log(now.toString())
 
 console.log(`Year: ${now.getFullYear()}`)
