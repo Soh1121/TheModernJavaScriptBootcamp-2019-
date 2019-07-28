@@ -38,4 +38,5 @@ now.add(1, 'week').subtract(20, 'days')
 console.log(now.format('MMMM Do, YYYY'))
 console.log(now.fromNow())
 const nowTimestamp = now.valueOf()
-console.log(nowTimestamp)
+
+console.log(moment(nowTimestamp).toString())
