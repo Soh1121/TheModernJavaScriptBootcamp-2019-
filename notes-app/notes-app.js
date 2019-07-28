@@ -35,5 +35,5 @@ window.addEventListener('storage', function (e) {
 
 const now = moment()
 console.log(now.toString())
-now.minute(1)
-console.log(now.toString())
+// now.minute(1)
+console.log(now.minute())
