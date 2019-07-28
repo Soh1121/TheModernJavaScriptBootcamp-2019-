@@ -33,32 +33,18 @@ window.addEventListener('storage', function (e) {
     }
 })
 
-// Unix Epoch - January 1st 1970 00:00:00
+// const now = moment()
+// now.add(1, 'week').subtract(20, 'days')
+// console.log(now.format('MMMM Do, YYYY'))
+// console.log(now.fromNow())
+// const nowTimestamp = now.valueOf()
 
-const now = new Date()
-const timestamp = now.getTime()
+// console.log(moment(nowTimestamp).toString())
 
-const myDate = new Date(timestamp)
-console.log(myDate.getFullYear())
+// 1. Create a new moment
+// 2. Set the month, day, and year to your birthday
+// 3. Use format to print it in the following way: Jan 6, 1991
 
-/* console.log(`Year: ${now.getFullYear()}`)
-console.log(`Month: ${now.getMonth()}`)
-console.log(`Day of month: ${now.getDate()}`)
-console.log(`Hour: ${now.getHours()}`)
-console.log(`Minute: ${now.getMinutes()}`)
-console.log(`Seconds: ${now.getSeconds()}`)
- */
-
- // 1. Create two dates in th past (use string for Date)
- // 2. Get timestamps for both
- // 3. Figure out which is first and print its time (use toString)
-const dateOne = new Date('March 1 2018 12:00:00')
-const dateTwo = new Date()
-const dateOneTimestamp = dateOne.getTime()
-const dateTwoTimestamp = dateTwo.getTime()
-
-if (dateOneTimestamp < dateTwoTimestamp) {
-    console.log(dateOne.toString())
-} else {
-    console.log(dateTwo.toString())
-}
+const birthday = moment()
+birthday.year(1991).month(1).date(6)
+console.log(birthday.format('MMM D, YYYY'))
