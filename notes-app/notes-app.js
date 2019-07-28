@@ -36,4 +36,4 @@ window.addEventListener('storage', function (e) {
 const now = moment()
 console.log(now.toString())
 now.add(1, 'year').subtract(20, 'days')
-console.log(now.toString())
+console.log(now.format())
