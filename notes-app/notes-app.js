@@ -36,4 +36,5 @@ window.addEventListener('storage', function (e) {
 const now = moment()
 console.log(now.toString())
 now.add(1, 'year').subtract(20, 'days')
-console.log(now.format())
+console.log(now.format('MMMM Do, YYYY'))
+// November 3rd, 2003
