@@ -182,5 +182,5 @@ const now = new Date('January 21 2001 6:25:01')
 ```
 
 #### Lecture75.Moment
-- 
+- 日時を扱う便利なライブラリ
 - [Moment.js](https://momentjs.com/)
