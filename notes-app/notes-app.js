@@ -44,6 +44,7 @@ window.addEventListener('storage', function (e) {
 // 1. Create a new moment
 // 2. Set the month, day, and year to your birthday
 // 3. Use format to print it in the following way: Jan 6, 1991
-const newMoment = moment()
-newMoment.year(1989).month(0).date(21)
-console.log(newMoment.format('MMM D, YYYY'))
+
+const birthday = moment()
+birthday.year(1991).month(1).date(6)
+console.log(birthday.format('MMM D, YYYY'))
