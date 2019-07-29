@@ -8,10 +8,13 @@ renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function (e) {
     const id = generateUuid()
+    const timestamp = moment().valueOf()
     notes.push({
         id: id,
         title: '',
-        body: ''
+        body: '',
+        createdAt: timestamp,
+        updatedAt: timestamp
     })
     saveNotes(notes)
     location.assign(`./edit.html#${id}`)
@@ -32,19 +35,3 @@ window.addEventListener('storage', function (e) {
         renderNotes(notes, filters)
     }
 })
-
-// const now = moment()
-// now.add(1, 'week').subtract(20, 'days')
-// console.log(now.format('MMMM Do, YYYY'))
-// console.log(now.fromNow())
-// const nowTimestamp = now.valueOf()
-
-// console.log(moment(nowTimestamp).toString())
-
-// 1. Create a new moment
-// 2. Set the month, day, and year to your birthday
-// 3. Use format to print it in the following way: Jan 6, 1991
-
-const birthday = moment()
-birthday.year(1991).month(1).date(6)
-console.log(birthday.format('MMM D, YYYY'))
