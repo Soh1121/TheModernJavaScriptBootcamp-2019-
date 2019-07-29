@@ -16,13 +16,13 @@ bodyElement.value = note.body
 
 titleElement.addEventListener('input', function (e) {
     note.title = e.target.value
-    note.updatedAt = moment()
+    note.updatedAt = moment().valueOf()
     saveNotes(notes)
 })
 
 bodyElement.addEventListener('input', function (e) {
     note.body = e.target.value
-    note.updatedAt = moment()
+    note.updatedAt = moment().valueOf()
     saveNotes(notes)
 })
 
