@@ -96,3 +96,91 @@ document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value)
 })
 ```
+
+## Section8
+### Lecture62.Saving Our Data in LocalStorage: Part I
+- ローカルストレージにデータを保存
+  - `key: value` の形式で保存
+  - valueに保存できるのは数値・文字列
+  - オブジェクトを保存したいのであれば、文字列に変換してから
+
+#### ローカルストレージへのアクセス
+```sample.js
+// ローカルストレージへ保存
+localStrage.setItem('location', 'Philadelphia')
+
+// ローカルストレージから値を取得し、コンソールに表示
+console.log(localStrage.getItem('location'))
+
+// ローカルストレージから指定したkeyの値を削除
+localStrage.removeItem('location')
+
+// ローカルストレージを初期化
+localStrage.clear()
+```
+
+#### ローカルストレージへオブジェクトを保存
+```sample.js
+// サンプルデータ
+const user = {
+   name: 'Andrew',
+   age: 27
+}
+
+// 保存方法
+// オブジェクトを文字列に変換
+const userJSON = JSON.stringify(user)
+// 変換してから保存
+localStorage.setItem('user', userJSON)
+
+// 取得方法
+// データを取得
+const userJSON = localStorage.getItem('user')
+// データをパース
+const user = JSON.parse(userJSON)
+// コンソールに表示
+console.log(`${user.name} is ${user.age}`)
+```
+
+### Lecture73.Syncing Data Across Pages
+- ウインドウサイズを取得
+  - ウインドウの高さ `window.innerHeight`
+  - ウインドウの幅 `window.innerWidth`
+- ローカルストレージの変更をイベントとして取得
+  - これを活用してページ間のデータ同期を実現
+
+```javascript
+window.addEventListener('storage', function (e) {
+    console.log('some data changed')
+})
+```
+
+#### Lecture74.JavaScript Dates
+- 現在時刻を取得（年・月・日・時・分・秒・曜日・TZ）
+
+```javascript
+// 現在時刻の取得
+const now = new Date()
+// 表示するには文字列に変換
+console.log(now.toString())
+
+// 年を文字列で抽出
+console.log(`Year: ${now.getFullYear()}`)
+// 月を文字列で抽出
+console.log(`Month: ${now.getMonth()}`)
+// 日を文字列で抽出
+console.log(`Day of month: ${now.getDate()}`)
+// 時を文字列で抽出
+console.log(`Hour: ${now.getHours()}`)
+// 分を文字列で抽出
+console.log(`Minute: ${now.getMinutes()}`)
+// 秒を文字列で抽出
+console.log(`Seconds: ${now.getSeconds()}`)
+
+// 特定の日時を生成
+const now = new Date('January 21 2001 6:25:01')
+```
+
+#### Lecture75.Moment
+- 日時を扱う便利なライブラリ
+- [Moment.js](https://momentjs.com/)
