@@ -1,4 +1,6 @@
-const square = (num) => {
+const square = (num) => num * num
+
+const squareLong = (num) => {
     return num * num
 }
 
