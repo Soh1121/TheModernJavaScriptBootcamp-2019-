@@ -155,7 +155,7 @@ window.addEventListener('storage', function (e) {
 })
 ```
 
-#### Lecture74.JavaScript Dates
+### Lecture74.JavaScript Dates
 - 現在時刻を取得（年・月・日・時・分・秒・曜日・TZ）
 
 ```javascript
@@ -181,6 +181,20 @@ console.log(`Seconds: ${now.getSeconds()}`)
 const now = new Date('January 21 2001 6:25:01')
 ```
 
-#### Lecture75.Moment
+### Lecture75.Moment
 - 日時を扱う便利なライブラリ
 - [Moment.js](https://momentjs.com/)
+
+## Section9
+### Lecture80.Arrow Function: Part I
+- arrow関数の基本
+- 関数の表記を簡略化可能
+- 次の2つの関数は同じ
+
+```javascript
+const under30 = people.filter(function (person) {
+    return person.age < 30
+})
+
+const under30 = people.filter((person) => person.age < 30)
+```
