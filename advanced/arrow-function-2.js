@@ -1,5 +1,5 @@
 const add = function (a, b) {
-    console.log(arguments)
+    return arguments[0] + arguments[1]
 }
 
-add(11, 22, 33, 44)
+console.log(add(11, 22, 33, 44))
