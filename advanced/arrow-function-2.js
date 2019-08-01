@@ -6,7 +6,7 @@ console.log(add(11, 22, 33, 44))
 
 const car = {
     color: 'Red',
-    getSummary: function () {
+    getSummary: () => {
         return `The car is ${this.color}`
     }
 }
