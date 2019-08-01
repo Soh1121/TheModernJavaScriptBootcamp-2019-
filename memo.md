@@ -155,7 +155,7 @@ window.addEventListener('storage', function (e) {
 })
 ```
 
-#### Lecture74.JavaScript Dates
+### Lecture74.JavaScript Dates
 - 現在時刻を取得（年・月・日・時・分・秒・曜日・TZ）
 
 ```javascript
@@ -181,6 +181,76 @@ console.log(`Seconds: ${now.getSeconds()}`)
 const now = new Date('January 21 2001 6:25:01')
 ```
 
-#### Lecture75.Moment
+### Lecture75.Moment
 - 日時を扱う便利なライブラリ
 - [Moment.js](https://momentjs.com/)
+
+## Section9
+### Lecture80.Arrow Function: Part I
+- arrow関数の基本
+- 関数の表記を簡略化可能
+- 次の2つの関数は同じ
+
+```javascript
+const under30 = people.filter(function (person) {
+    return person.age < 30
+})
+
+const under30 = people.filter((person) => person.age < 30)
+```
+
+### Lecture81.Arrow Function: Part II
+- arrow関数では関数でできる引数の配列指定はできない
+
+```javascript
+const add = function (a, b) {
+  return arguments[0] + arguments[1]
+}
+
+console.log(add(11, 22, 33, 44))
+// 33
+
+const add = () => {
+    return arguments[0] + arguments[1]
+}
+
+console.log(add(11, 22, 33, 44))
+//[object Object]function require(path) {
+//    return mod.require(path);
+//  }
+```
+
+- メソッドはarrow関数化できない
+- 代わりに`: function`を省略可
+
+```javascript
+const car = {
+    color: 'Red',
+    getSummary: function () {
+        return `The car is ${this.color}`
+    }
+}
+
+console.log(car.getSummary())
+// The car is Red
+
+const car = {
+    color: 'Red',
+    getSummary: () => {
+        return `The car is ${this.color}`
+    }
+}
+
+console.log(car.getSummary())
+// The car is undefined
+
+const car = {
+    color: 'Red',
+    getSummary() {
+        return `The car is ${this.color}`
+    }
+}
+
+console.log(car.getSummary())
+// The car is Red
+```
