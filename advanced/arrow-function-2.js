@@ -1,4 +1,4 @@
-const add = function (a, b) {
+const add = () => {
     return arguments[0] + arguments[1]
 }
 
