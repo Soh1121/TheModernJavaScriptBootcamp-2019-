@@ -6,10 +6,11 @@ console.log(message)
 
 const myAge = 27
 const showPage = () => {
-    console.log('Showing the page')
+    return 'Showing the page'
 }
 const showErrorPage = () => {
-    console.log('Showing the error page')
+    return 'Showing the error page'
 }
 
-myAge >= 21 ? showPage() : showErrorPage()
+const message = myAge >= 21 ? showPage() : showErrorPage()
+console.log(message)
