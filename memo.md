@@ -304,3 +304,12 @@ Error: Argument must be a number
     at Module.load (***/loader.js:628:32)
     at Function.Module._load (***/loader.js:555:12)
 ```
+
+- エラー処理
+```javascript
+try {
+  エラーや例外が発生する可能性のある処理
+} catch (e) {
+  エラーや例外が発生した場合の処理
+}
+```
