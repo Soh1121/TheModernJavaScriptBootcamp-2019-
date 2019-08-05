@@ -6,5 +6,5 @@ const getTip = (amount) => {
     }
 }
 
-const result = getTip(true)
+const result = getTip(2)
 console.log(result)
