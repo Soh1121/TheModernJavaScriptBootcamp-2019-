@@ -254,3 +254,63 @@ const car = {
 console.log(car.getSummary())
 // The car is Red
 ```
+
+### Lecture85.Catching and throwing Errors
+- 例外を投げたいとき
+```try-catch.js
+const getTip = (amount) => {
+    if (typeof amount === 'number') {
+        return amount * .25
+    } else {
+        throw 'Argument must be a number'
+    }
+}
+
+const result = getTip('test')
+console.log(result)
+```
+
+```
+/***/try-catch.js:5
+        throw 'Argument must be a number'
+        ^
+Argument must be a number
+```
+
+- 詳細も入れて例外を投げたいとき
+```try-catch.js
+const getTip = (amount) => {
+    if (typeof amount === 'number') {
+        return amount * .25
+    } else {
+        throw Error('Argument must be a number')
+    }
+}
+
+const result = getTip('test')
+console.log(result)
+```
+
+```
+/***/try-catch.js:5
+        throw Error('Argument must be a number')
+        ^
+
+Error: Argument must be a number
+    at getTip (/***/try-catch.js:5:15)
+    at Object.<anonymous> (/***/try-catch.js:9:16)
+    at Module._compile (***/loader.js:759:30)
+    at Object.Module._extensions..js (***/loader.js:770:10)
+    at Module.load (***/loader.js:628:32)
+    at Function.Module._load (***/loader.js:555:12)
+```
+
+- エラー処理
+```javascript
+try {
+  エラーや例外が発生する可能性のある処理
+} catch (e) {
+  console.log(e.message)
+  などエラーや例外が発生した場合の処理
+}
+```
