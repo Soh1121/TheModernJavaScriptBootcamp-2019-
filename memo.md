@@ -310,6 +310,7 @@ Error: Argument must be a number
 try {
   エラーや例外が発生する可能性のある処理
 } catch (e) {
-  エラーや例外が発生した場合の処理
+  console.log(e.message)
+  などエラーや例外が発生した場合の処理
 }
 ```

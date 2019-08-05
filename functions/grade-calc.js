@@ -4,8 +4,9 @@
 
 const gradeCalc = function (score, totalScore) {
     if (typeof score !== 'number' || typeof totalScore !== 'number') {
-        throw Error('Argument must be a number')
+        throw Error('Please provide numbers only')
     }
+
     const percent = (score / totalScore) * 100
     let letterGrade = ''
 
@@ -25,8 +26,8 @@ const gradeCalc = function (score, totalScore) {
 }
 
 try {
-    const result = gradeCalc('a', 20)
+    const result = gradeCalc(9, true)
     console.log(result)
 } catch (e) {
-    console.log(e)
+    console.log(e.message)
 }
