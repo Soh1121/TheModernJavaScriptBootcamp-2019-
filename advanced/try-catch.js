@@ -1,5 +1,9 @@
 const getTip = (amount) => {
-    return amount * .25
+    if (typeof amount === 'number') {
+        return amount * .25
+    } else {
+        throw 'Argument must be a number'
+    }
 }
 
 const result = getTip(true)
