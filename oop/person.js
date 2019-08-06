@@ -5,5 +5,5 @@ const Person = function (firstName, lastName, age) {
 }
 
 const me = new Person('Andrew', 'Mead', 27)
-
-console.log(me.age)
+me.firstName = 'Jen'
+console.log(me)
