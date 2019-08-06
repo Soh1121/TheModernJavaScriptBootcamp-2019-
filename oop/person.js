@@ -1,7 +1,7 @@
-const person = function () {
-    this.firstName = 'Andrew'
+const person = function (firstName) {
+    this.firstName = firstName
 }
 
-const me = new person()
+const me = new person('Andrew')
 
 console.log(me)
