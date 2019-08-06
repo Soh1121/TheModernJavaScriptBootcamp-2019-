@@ -316,5 +316,5 @@ try {
 ```
 
 ### Lecture87.Working in Strict Mode
-- strict モードにすることで幾つかの機能を制限します。
+- strict モードにすることで幾つかの機能を制限
   - 暗黙的なグローバル変数（const、let、varの記入なし）
