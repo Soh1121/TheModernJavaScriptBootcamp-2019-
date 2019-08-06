@@ -1,5 +1,5 @@
-'use strict'
 
+const public = true
 let data
 const processData = () => {
     data = '1230987234'
