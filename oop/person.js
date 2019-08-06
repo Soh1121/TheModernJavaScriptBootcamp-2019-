@@ -6,4 +6,4 @@ const Person = function (firstName, lastName, age) {
 
 const me = new Person('Andrew', 'Mead', 27)
 
-console.log(me)
+console.log(me.age)
