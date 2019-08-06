@@ -314,3 +314,7 @@ try {
   などエラーや例外が発生した場合の処理
 }
 ```
+
+### Lecture87.Working in Strict Mode
+- strict モードにすることで幾つかの機能を制限します。
+  - 暗黙的なグローバル変数（const、let、varの記入なし）

@@ -1,3 +1,5 @@
+'use strict'
+
 const processData = () => {
     data = '1230987234'
 }
