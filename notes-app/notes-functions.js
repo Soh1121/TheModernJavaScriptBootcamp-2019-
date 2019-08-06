@@ -1,3 +1,4 @@
+'use strict'
 
 const public = true
 let data
