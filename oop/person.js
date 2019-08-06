@@ -1,5 +1,5 @@
 const person = function () {
-    console.log(this)
+    this.firstName = 'Andrew'
 }
 
 const me = new person()
