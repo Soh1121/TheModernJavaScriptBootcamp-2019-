@@ -1,4 +1,6 @@
-const person = function () {}
+const person = function () {
+    console.log(this)
+}
 
 const me = new person()
 
