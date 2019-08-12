@@ -10,10 +10,15 @@ Person.prototype.getBio = function () {
     return `${this.firstName} is ${this.age}.`
 }
 
-Person.prototype.location = `Thailand`
+Person.prototype.setName = function (fullName) {
+    const names = fullName.split(' ')
+    this.firstName = names[0]
+    this.lastName = names[1]
+}
 
 const me = new Person('Andrew', 'Mead', 27)
-console.log(me.location)
+me.setName('Alexis Turner')
+console.log(me.getBio())
 
 const person2 = new Person('Clancey', 'Turner', 51)
 console.log(person2.getBio())
