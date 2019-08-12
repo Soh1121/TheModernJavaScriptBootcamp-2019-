@@ -10,7 +10,7 @@ const Person = function (firstName, lastName, age, likes = []) {
 Person.prototype.getBio = function () {
     let bio = `${this.firstName} is ${this.age}.`
 
-    this.likes.forEach(function (like) {
+    this.likes.forEach((like) => {
         bio += ` ${this.firstName} likes ${like}.`
     })
 
