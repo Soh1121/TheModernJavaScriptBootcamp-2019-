@@ -10,8 +10,10 @@ Person.prototype.getBio = function () {
     return `${this.firstName} is ${this.age}.`
 }
 
+Person.prototype.location = `Thailand`
+
 const me = new Person('Andrew', 'Mead', 27)
-console.log(me.getBio())
+console.log(me.location)
 
 const person2 = new Person('Clancey', 'Turner', 51)
 console.log(person2.getBio())
