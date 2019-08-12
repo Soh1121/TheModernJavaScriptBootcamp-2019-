@@ -1,13 +1,20 @@
 // Prototypal Inheritance
 
-const Person = function (firstName, lastName, age) {
+const Person = function (firstName, lastName, age, likes = []) {
     this.firstName = firstName
     this.lastName = lastName
     this.age = age
+    this.likes = likes
 }
 
 Person.prototype.getBio = function () {
-    return `${this.firstName} is ${this.age}.`
+    let bio = `${this.firstName} is ${this.age}.`
+
+    this.likes.forEach((like) => {
+        bio += ` ${this.firstName} likes ${like}.`
+    })
+
+    return bio
 }
 
 Person.prototype.setName = function (fullName) {
@@ -16,7 +23,7 @@ Person.prototype.setName = function (fullName) {
     this.lastName = names[1]
 }
 
-const me = new Person('Andrew', 'Mead', 27)
+const me = new Person('Andrew', 'Mead', 27, ['Teaching', 'Biking'])
 me.setName('Alexis Turner')
 console.log(me.getBio())
 
