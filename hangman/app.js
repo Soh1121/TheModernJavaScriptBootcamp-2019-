@@ -3,4 +3,4 @@ const product = {
 }
 
 // hasOwnProperty
-console.log(product.hasOwnProperty('name'))
+console.log(product.hasOwnProperty('price'))
