@@ -3,8 +3,8 @@ const product = {
     name: 'Influence'
 }
 
-Object.prototype.hasOwnProperty = () => 'This is the new function'
+Object.prototype.someNewMethod = () => 'This is the new function'
 
 // hasOwnProperty
-console.log(product.hasOwnProperty('hasOwnProperty'))
+console.log(product.someNewMethod())
 console.log(product)
