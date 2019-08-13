@@ -28,4 +28,5 @@ me.setName('Alexis Turner')
 console.log(me.getBio())
 
 const person2 = new Person('Clancey', 'Turner', 51)
+
 console.log(person2.getBio())
