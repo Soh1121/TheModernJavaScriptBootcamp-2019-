@@ -1,7 +1,7 @@
 // product --> Object.prototype --> null
-const product = {
-    name: 'Influence'
-}
+const product = new Object()
+
+product.name = 'Rest'
 
 Object.prototype.someNewMethod = () => 'This is the new function'
 
