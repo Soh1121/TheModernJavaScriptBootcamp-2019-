@@ -2,6 +2,7 @@
 
 // Object: myObject --> Object.prototype --> null
 // Array: myArray --> Array.prototype --> Object.prototype --> null
+// Function: myFunc --> Function.prototype --> Object.prototype --> null
 
-const team = ['Luke', 'Maddison']
-console.log(team.hasOwnProperty('filter'))
+const getScore = () => 1
+console.log(getScore)
