@@ -5,4 +5,7 @@
 // Function: myFunc --> Function.prototype --> Object.prototype --> null
 
 const product = 'Computer'
-console.log(product.split(''))
+console.log(product)
+
+const otherProduct = new String('Phone')
+console.log(otherProduct)
