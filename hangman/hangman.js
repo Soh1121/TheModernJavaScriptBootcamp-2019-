@@ -1,7 +1,3 @@
-// 1. Display the puzzle to the browser instead of the console
-// 2. Display the guesses left to the browser insted of console
-// 3. Separate the Hangman definition from the rest of the app code (use app.js)a
-
 const Hangman = function (word, remainingGuesses) {
     this.word = word.toLowerCase().split('')
     this.remainingGuesses = remainingGuesses
@@ -10,9 +6,7 @@ const Hangman = function (word, remainingGuesses) {
 }
 
 Hangman.prototype.calculateStatus = function () {
-    const finished = this.word.every((letter) => {
-        return this.guessedLetters.includes(letter)
-    })
+    const finished = this.word.every((letter) => this.guessedLetters.includes(letter))
     /* const lettersUnguessed = this.word.filter((letter) => {
         return !this.guessedLetters.includes(letter)
     })

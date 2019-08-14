@@ -1,12 +1,3 @@
-// 1. Setup new "status" property with initial value of "playing"
-// 2. Create method for recalculating status to "playing", "finished", or "failed"
-// 3. Call thatmethod after a guess is processed
-// 4. Use console.log to print the status
-
-// Start the game and see "playing"
-// Make two incorrect guesses to see "failed"
-// refresh the browser and guess "c", "a", and "t" to see "finished"
-
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 const game1 = new Hangman('Cas', 2)
