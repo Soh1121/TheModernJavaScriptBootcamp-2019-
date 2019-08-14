@@ -4,4 +4,4 @@
 // Array: myArray --> Array.prototype --> Object.prototype --> null
 
 const team = ['Luke', 'Maddison']
-console.log(team.hasOwnProperty('length'))
+console.log(team.hasOwnProperty('filter'))
