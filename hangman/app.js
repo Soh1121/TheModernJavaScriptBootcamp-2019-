@@ -1,10 +1,7 @@
-// product --> Object.prototype --> null
-const product = new Object({
-    name: 'The War Of Art'
-})
+// Primitive value: string, number, boolean, null, undefined
 
-Object.prototype.someNewMethod = () => 'This is the new function'
+// Object: myObject --> Object.prototype --> null
+// Array: myArray --> Array.prototype --> Object.prototype --> null
 
-// hasOwnProperty
-console.log(product.someNewMethod())
-console.log(product)
+const team = ['Luke', 'Maddison']
+console.log(team)
