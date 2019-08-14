@@ -23,27 +23,28 @@ Hangman.prototype.getPuzzle = function () {
     return puzzle
 }
 
-Hangman.prototype.getGuessingCharacter = function (guessingCharacters) {
-    this.guessedLetters = guessingCharacters.split('')
-}
+Hangman.prototype.makeGuess = function (guess) {
+    guess = guess.toLowerCase()
+    const isUnique = !this.guessedLetters.includes(guess)
+    const isBadGuess = !this.word.includes(guess)
 
-Hangman.prototype.remainingGuesse = function (result) {
-    const resultWord = result.split('')
-    this.remainingGuesses = resultWord.filter((item) => item === '*').length
-    return this.remainingGuesses
+    if (isUnique) {
+        this.guessedLetters.push(guess)
+    }
+
+    if (isUnique && isBadGuess) {
+        this.remainingGuesses--
+    }
 }
 
 const game1 = new Hangman('Cat', 2)
-// Guess c, t, z
-game1.getGuessingCharacter('ctz')
-const puzzle1 = game1.getPuzzle()  // c*t
-// Print remaining guesses (shoud be 1)
-console.log(puzzle1)
-console.log(`should be ${game1.remainingGuesse(puzzle1)}`)
+game1.makeGuess('c')
+game1.makeGuess('t')
+game1.makeGuess('z')
+console.log(game1.getPuzzle())
+console.log(game1.remainingGuesses)
 
 const game2 = new Hangman('New Jersey', 4)
-// Guess w
-game2.getGuessingCharacter('w')
-const puzzle2 = game2.getPuzzle() // **w ******
-console.log(puzzle2)
-console.log(`should be ${game2.remainingGuesse(puzzle2)}`)
+game2.makeGuess('w')
+console.log(game2.getPuzzle())
+console.log(game2.remainingGuesses)
