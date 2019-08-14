@@ -4,5 +4,5 @@
 // Array: myArray --> Array.prototype --> Object.prototype --> null
 // Function: myFunc --> Function.prototype --> Object.prototype --> null
 
-const getScore = () => 1
-console.log(getScore)
+const product = 'Computer'
+console.log(product)
