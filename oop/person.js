@@ -29,12 +29,15 @@ class Employee extends Person {
         super(firstName, lastName, age, likes)
         this.position = position
     }
+    getBio() {
+        return `${this.firstName} ${this.lastName} is a ${this.position}.`
+        // Andrew is a Teacher
+    }
 }
 
 const me = new Employee('Andrew', 'Mead', 27, 'Teacher', ['Teaching', 'Biking'])
-console.log(me)
-/* me.setName('Alexis Turner')
-console.log(me.getBio()) */
+me.setName('Alexis Turner')
+console.log(me.getBio())
 
 const person2 = new Person('Clancey', 'Turner', 51)
 
