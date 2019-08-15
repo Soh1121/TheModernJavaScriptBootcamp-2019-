@@ -7,10 +7,19 @@ class PersonClass {
         this.age = age
         this.likes = likes
     }
+    getBio() {
+        let bio = `${this.firstName} is ${this.age}.`
+
+        this.likes.forEach((like) => {
+            bio += ` ${this.firstName} likes ${like}.`
+        })
+
+        return bio
+    }
 }
 
 const myPerson = new PersonClass('Andrew', 'Mead', 27, ['Teaching'])
-console.log(myPerson)
+console.log(myPerson.getBio())
 
 const Person = function (firstName, lastName, age, likes = []) {
     this.firstName = firstName
