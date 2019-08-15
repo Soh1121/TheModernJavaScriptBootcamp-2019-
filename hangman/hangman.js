@@ -1,10 +1,3 @@
-// 1. Disable new guesses unless "playing"
-// 2. Setup a new method to get back a status message
-
-// Playing -> Guesses left: 3
-// Faild -> Nice try! The word was "Cat"
-// Finished -> Great work! You guessed the word.a
-
 const Hangman = function (word, remainingGuesses) {
     this.word = word.toLowerCase().split('')
     this.remainingGuesses = remainingGuesses
@@ -21,6 +14,16 @@ Hangman.prototype.calculateStatus = function () {
         this.status = 'finished'
     } else {
         this.status = 'playing'
+    }
+}
+
+Hangman.prototype.getStatusMessage = function () {
+    if (this.status === 'playing') {
+        return `Guesses left: ${this.remainingGuesses}`
+    } else if (this.status === 'failed') {
+        return `Nice try! The word was "${this.word.join('')}".`
+    } else {
+        return 'Great work! You guessed the work.'
     }
 }
 
@@ -43,6 +46,10 @@ Hangman.prototype.makeGuess = function (guess) {
     const isUnique = !this.guessedLetters.includes(guess)
     const isBadGuess = !this.word.includes(guess)
 
+    if (this.status !== 'playing') {
+        return
+    }
+
     if (isUnique) {
         this.guessedLetters.push(guess)
     }
@@ -52,14 +59,4 @@ Hangman.prototype.makeGuess = function (guess) {
     }
 
     this.calculateStatus()
-}
-
-Hangman.prototype.getBackStatus = function () {
-    if (this.status === 'playing') {
-        console.log(`Guesses left: ${this.remainingGuesses}`)
-    } else if (this.status === 'failed') {
-        console.log(`Nice try! The word was "${this.word.join('')}"`)
-    } else if (this.status === 'finished') {
-        console.log(`Great Work! You guessed the word.`)
-    }
 }
