@@ -1,4 +1,5 @@
 // Prototypal Inheritance
+// myPerson --> Person.prototype --> Object.prototype --> null
 
 class Person {
     constructor(firstName, lastName, age, likes = []) {
@@ -23,7 +24,11 @@ class Person {
     }
 }
 
-const me = new Person('Andrew', 'Mead', 27, ['Teaching', 'Biking'])
+class Employee extends Person {
+
+}
+
+const me = new Employee('Andrew', 'Mead', 27, ['Teaching', 'Biking'])
 me.setName('Alexis Turner')
 console.log(me.getBio())
 
