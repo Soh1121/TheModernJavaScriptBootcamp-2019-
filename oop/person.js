@@ -1,10 +1,15 @@
 // Prototypal Inheritance
 
 class PersonClass {
-
+    constructor(firstName, lastName, age, likes = []) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.likes = likes
+    }
 }
 
-const myPerson = new PersonClass()
+const myPerson = new PersonClass('Andrew', 'Mead', 27, ['Teaching'])
 console.log(myPerson)
 
 const Person = function (firstName, lastName, age, likes = []) {
