@@ -25,12 +25,15 @@ class Person {
 }
 
 class Employee extends Person {
-
+    constructor(firstName, lastName, age, position, likes) {
+        
+    }
 }
 
 const me = new Employee('Andrew', 'Mead', 27, ['Teaching', 'Biking'])
-me.setName('Alexis Turner')
-console.log(me.getBio())
+console.log(me)
+/* me.setName('Alexis Turner')
+console.log(me.getBio()) */
 
 const person2 = new Person('Clancey', 'Turner', 51)
 
