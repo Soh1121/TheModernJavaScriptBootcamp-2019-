@@ -7,9 +7,12 @@ guessesEl.textContent = game1.remainingGuesses
 console.log(game1.status)
 
 window.addEventListener('keypress', function (e) {
-    const guess = String.fromCharCode(e.charCode)
-    game1.makeGuess(guess)
-    puzzleEl.textContent = game1.getPuzzle()
-    guessesEl.textContent = game1.remainingGuesses
-    console.log(game1.status)
+    const isPlaying = game1.status === 'playing'
+    if (isPlaying) {
+        const guess = String.fromCharCode(e.charCode)
+        game1.makeGuess(guess)
+        puzzleEl.textContent = game1.getPuzzle()
+        guessesEl.textContent = game1.remainingGuesses
+        game1.getBackStatus()
+    }
 })
