@@ -26,7 +26,7 @@ class Person {
 
 class Employee extends Person {
     constructor(firstName, lastName, age, position, likes) {
-        
+        super(firstName, lastName, age, likes)
     }
 }
 
