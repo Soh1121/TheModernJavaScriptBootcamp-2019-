@@ -43,24 +43,16 @@ class Student extends Person {
         super(firstName, lastName, age, likes)
         this.grade = grade
     }
-    getBio () {
-        return this.grade >= 70 ? `${this.firstName} is passing the class` : `${this.firstName} is failing the class`
+    updateGrade (change) {
+        this.grade += change
     }
-    updateGrade (amount) {
-        this.grade += amount
+    getBio () {
+        const status = this.grade >= 70 ? 'passing' : 'failing'
+        return `${this.firstName} is ${status} the class.`
     }
 }
 
-// 1. Create class for students
-// 2. Track student grade. 0 - 100
-// 3. Override bio to print a passing or failing message. 70 and above "Andrew is passing the class"
-// 4. Create "updateGrade" that takes the amount to add or remove from the grade
-
-// Create student
-student = new Student('Andrew', 'Mead', 27, 69)
-// Print status (failing or passing)
-console.log(student.getBio())
-// Change grade to change status
-student.updateGrade(1)
-// Print status again
-console.log(student.getBio())
+const me = new Student('Andrew', 'Mead', 27, 88, [])
+console.log(me.getBio())
+me.updateGrade(-20)
+console.log(me.getBio())
