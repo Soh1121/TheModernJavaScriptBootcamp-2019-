@@ -27,10 +27,11 @@ class Person {
 class Employee extends Person {
     constructor(firstName, lastName, age, position, likes) {
         super(firstName, lastName, age, likes)
+        this.position = position
     }
 }
 
-const me = new Employee('Andrew', 'Mead', 27, ['Teaching', 'Biking'])
+const me = new Employee('Andrew', 'Mead', 27, 'Teacher', ['Teaching', 'Biking'])
 console.log(me)
 /* me.setName('Alexis Turner')
 console.log(me.getBio()) */
