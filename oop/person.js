@@ -22,6 +22,9 @@ class Person {
         this.firstName = names[0]
         this.lastName = names[1]
     }
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`
+    }
 }
 
 class Employee extends Person {
@@ -30,7 +33,7 @@ class Employee extends Person {
         this.position = position
     }
     getBio() {
-        return `${this.firstName} ${this.lastName} is a ${this.position}.`
+        return `${this.fullName} is a ${this.position}.`
         // Andrew is a Teacher
     }
     getYearsLeft() {
@@ -52,8 +55,7 @@ class Student extends Person {
     }
 }
 
-const me = new Student('Andrew', 'Mead', 27, 88, [])
+const me = new Employee('Andrew', 'Mead', 27, 'Teacher', [])
 me.fullName = 'Clancey Turner'
 console.log(me.getBio())
-me.updateGrade(-20)
-console.log(me.getBio())
+
