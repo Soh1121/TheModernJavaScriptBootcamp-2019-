@@ -1,7 +1,3 @@
-// 1. Convert "getStatusMessage" to a custom getter for "statusMessage"
-// 2. Convert "getPuzzle" to a custom getter for "puzzle"
-// 3. Change usage in app.js
-
 class Hangman {
     constructor(word, remainingGuesses) {
         this.word = word.toLowerCase().split('')
