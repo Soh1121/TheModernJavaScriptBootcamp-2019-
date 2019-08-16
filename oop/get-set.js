@@ -1,6 +1,6 @@
 const data = {
     get location() {
-        return 'This is a test'
+        return this._location
     },
     set location(value) {
         this._location = value.trim()
@@ -9,4 +9,4 @@ const data = {
 
 // code that uses the data object
 data.location = '  Philadelphia    '
-console.log(data)
+console.log(data.location)
