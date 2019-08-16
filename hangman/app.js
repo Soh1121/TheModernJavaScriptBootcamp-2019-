@@ -28,5 +28,5 @@ request.addEventListener('readystatechange', (e) => {
     }
 })
 
-request.open('GET', 'http://puzzle.mead.io/puzzle?key=value')
+request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=3')
 request.send()
