@@ -1,6 +1,3 @@
-// HTTP (Hypertext Transfer Protocol)
-// Request - What do we want to do
-// Response - What was actually done
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 const game1 = new Hangman('Car Parts', 2)
@@ -30,11 +27,6 @@ request.addEventListener('readystatechange', (e) => {
 
 request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=3')
 request.send()
-
-// 1. Make a new request for all countries
-// 2. Parse the responseText to get back the array of objects
-// 3. Find your country object by it's country code (alpha2Code property)
-// 4. Print the full country name (name property)
 
 const countryCode = "US"
 const countryRequest = new XMLHttpRequest()
