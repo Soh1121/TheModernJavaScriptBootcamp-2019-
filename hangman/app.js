@@ -13,8 +13,9 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
-const puzzle = getPuzzle()
-console.log(puzzle)
+getPuzzle((puzzle) => {
+    console.log(puzzle)
+})
 
 // Making an HTTP request
 
