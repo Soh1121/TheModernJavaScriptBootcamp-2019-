@@ -23,7 +23,7 @@ request.addEventListener('readystatechange', (e) => {
     if (e.target.readyState === 4 && e.target.status === 200) {
         const data = JSON.parse(e.target.responseText)
         console.log(data)
-    } else if (e.target.readyState=== 4) {
+    } else if (e.target.readyState === 4) {
         console.log('And error has taken place')
     }
 })
@@ -37,21 +37,17 @@ request.send()
 // 4. Print the full country name (name property)
 
 const countryCode = "US"
-const countries = new XMLHttpRequest()
+const countryRequest = new XMLHttpRequest()
 
-countries.open('GET', 'https://restcountries.eu/rest/v2/all')
-countries.send()
-
-countries.addEventListener('readystatechange', (e) => {
+countryRequest.addEventListener('readystatechange', (e) => {
     if (e.target.readyState === 4 && e.target.status === 200) {
-        const responseText = JSON.parse(e.target.responseText)
-        const japanData = responseText.filter((item) => {
-            if (item.alpha2Code === 'JP') {
-                return true
-            }
-        })[0]
-        console.log(japanData.name)
+        const data = JSON.parse(e.target.responseText)
+        const country = data.find((country) => country.alpha2Code === countryCode)
+        console.log(country.name)
     } else if (e.target.readyState === 4) {
-        console.log('And error has taken place')
+        console.log('Unable to fetch data')
     }
 })
+
+countryRequest.open('GET', 'https://restcountries.eu/rest/v2/all')
+countryRequest.send()
