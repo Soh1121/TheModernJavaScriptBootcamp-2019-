@@ -13,8 +13,11 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
+const puzzle = getPuzzle()
+console.log(puzzle)
+
 // Making an HTTP request
-const request = new XMLHttpRequest()
+/* const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', (e) => {
     if (e.target.readyState === 4 && e.target.status === 200) {
@@ -43,3 +46,4 @@ countryRequest.addEventListener('readystatechange', (e) => {
 
 countryRequest.open('GET', 'https://restcountries.eu/rest/v2/all')
 countryRequest.send()
+ */
