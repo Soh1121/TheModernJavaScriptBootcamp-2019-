@@ -39,3 +39,9 @@ getDataPromise(2).then((data) => {
 }, (err) => {
     console.log(err)
 })
+
+getDataPromise(10).then((data) => {
+    return getDataPromise(data)
+}).then((data) => {
+    console.log(data)
+})
