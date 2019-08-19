@@ -12,19 +12,19 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
-/* getPuzzle('2').then((puzzle) => {
-    console.log(puzzle)
-}, (err) => {
+getPuzzle('2').then((data) => {
+    console.log(data.puzzle)
+}).catch((err) => {
     console.log(`Error: ${err}`)
 })
 
-getCountry('MX').then((country) => {
+/* getCountry('MX').then((country) => {
     console.log(country.name)
 }, (err) => {
     console.log(`Error: ${err}`)
 }) */
 
-fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+/* fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
     if (response.status === 200) {
         return response.json()
     } else {
@@ -35,3 +35,4 @@ fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
 }).catch((error) => {
     console.log(error)
 })
+ */
