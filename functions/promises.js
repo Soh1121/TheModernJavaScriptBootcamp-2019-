@@ -28,3 +28,9 @@ myPromise.then((data) => {
 }, (err) => {
     console.log(err)
 })
+
+myPromise.then((data) => {
+    console.log(data)
+}, (err) => {
+    console.log(err)
+})
