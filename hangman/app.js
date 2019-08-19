@@ -12,13 +12,14 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
-getPuzzle("2", (error, puzzle) => {
-    if (error) {
-        console.log(`Error: ${error}`)
-    } else {
-        console.log(puzzle)
-    }
+getPuzzle('2').then((puzzle) => {
+    console.log(puzzle)
+}, (err) => {
+    console.log(`Error: ${err}`)
 })
+
+// 1. Covert getCountry to return a new promise
+// 2. Call getCountry and use then to print country name or the error
 
 getCountry('MX', (error, country) => {
     if (error) {
