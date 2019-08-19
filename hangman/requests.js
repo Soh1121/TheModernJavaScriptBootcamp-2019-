@@ -18,7 +18,7 @@ const getCountry = (countryCode) => {
             throw new Error('Unable to fetch data')
         }
     }).then((data) => {
-        const country = data.find((country) => country.alpha2Code === countryCode)
-        return country.name
+        return data.find((country) => country.alpha2Code === countryCode)
     })
 }
+
