@@ -18,11 +18,15 @@ getPuzzle('2').then((puzzle) => {
     console.log(`Error: ${err}`)
 })
 
-/* getCountry('MX').then((country) => {
-    console.log(country.name)
+// 1. Convert getCountry to use fetch and return a promise
+// 2. Make sure getCountry still resolove with the country that matches
+// 3. Change getCountry usage to use catch
+
+getCountry('MX').then((country) => {
+    console.log(country)
 }, (err) => {
     console.log(`Error: ${err}`)
-}) */
+})
 
 /* fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
     if (response.status === 200) {
