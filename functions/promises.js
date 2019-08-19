@@ -1,3 +1,13 @@
-setTimeout(() => {
-    console.log('This time is up')
-}, 2000)
+const getDataCallback = (callback) => {
+    setTimeout(() => {
+        callback(undefined, 'This is the data')
+    }, 2000)
+}
+
+getDataCallback((err, data) => {
+    if (err) {
+        
+    } else {
+        console.log(data)
+    }
+})
