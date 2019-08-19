@@ -1,10 +1,21 @@
-const myFunction = () => {
-    const message = 'This is my message'
-    const printMessage = () => {
-        console.log(message)
+const createCounter = () => {
+    let count = 0
+
+    return {
+        increment() {
+            count++
+        },
+        decrement() {
+            count--
+        },
+        get() {
+            return count
+        }
     }
-    return printMessage
 }
 
-const myPrintMessage = myFunction()
-myPrintMessage()
+const counter = createCounter()
+counter.increment()
+counter.decrement()
+counter.decrement()
+console.log(counter.get())
