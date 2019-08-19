@@ -30,3 +30,5 @@ const createAdder = (a) => {
 const add10 = createAdder(10)
 console.log(add10(-2))
 console.log(add10(20))
+const add100 = createAdder(100)
+console.log(add100(-90))
