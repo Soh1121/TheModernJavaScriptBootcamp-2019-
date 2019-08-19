@@ -24,23 +24,18 @@ getDataCallback(2, (err, data) => {
 })
 
 // Promise
-const getDataPromise = (data) => new Promise((resolve, reject) => {
+const getDataPromise = (num) => new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve(`This is my success data: ${data}`)
-        // reject('This is my promise error')
-        // reject('This is my promise error')
+        typeof num === 'number' ? resolve(num * 2) : reject('Number must be provided')
     }, 2000)
 })
 
-const myPromise = getDataPromise(123)
-myPromise.then((data) => {
-    console.log(data)
-}, (err) => {
-    console.log(err)
-})
-
-myPromise.then((data) => {
-    console.log(data)
+getDataPromise(2).then((data) => {
+    getDataPromise(data).then((data) => {
+        console.log(`Promise data: ${data}`)
+    }, (err) => {
+        console.log(err)
+    })
 }, (err) => {
     console.log(err)
 })
