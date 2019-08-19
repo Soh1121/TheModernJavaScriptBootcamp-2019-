@@ -18,4 +18,5 @@ const counter = createCounter()
 counter.increment()
 counter.decrement()
 counter.decrement()
+counter.count = 0
 console.log(counter.get())
