@@ -18,9 +18,6 @@ getPuzzle('2').then((puzzle) => {
     console.log(`Error: ${err}`)
 })
 
-// 1. Covert getCountry to return a new promise
-// 2. Call getCountry and use then to print country name or the error
-
 getCountry('MX').then((country) => {
     console.log(country.name)
 }, (err) => {
