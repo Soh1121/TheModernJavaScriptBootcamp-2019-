@@ -24,10 +24,9 @@ getCountry('MX').then((country) => {
     console.log(`Error: ${err}`)
 })
 
-getLocation().then((location) => {
-    return getCountry(location.country)
-}).then((country) => {
+getCurrentCountry().then((country) => {
     console.log(country.name)
-}).catch((err) => {
-    console.log(`Error: ${err}`)
+}).catch((error) => {
+    console.log(error)
 })
+
