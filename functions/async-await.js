@@ -5,8 +5,9 @@ const getDataPromise = (num) => new Promise((resolve, reject) => {
 })
 
 const processData = async () => {
-    const data = await getDataPromise(2)
-    console.log(data)
+    let data = await getDataPromise(2)
+    data = await getDataPromise(data)
+    return data
     // getDataPromise(2).then(() => {
     //     console.log(data)
     // })
