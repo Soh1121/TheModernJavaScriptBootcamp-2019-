@@ -24,13 +24,8 @@ getCountry('MX').then((country) => {
     console.log(`Error: ${err}`)
 })
 
-// 1. Create getLocation function which takes no arguments
-// 2. Setup getLocation to make a request to the url and parse the data
-// 3. Use getLocation to print the city, region, and country information
-getLocation().then((data) => {
-    console.log(`The city is ${data.city}.`)
-    console.log(`The region is ${data.region}.`)
-    console.log(`The country is ${data.country}.`)
+getLocation().then((location) => {
+    console.log(`You are currently in ${location.city} ${location.region} ${location.country}!`)
 }).catch((err) => {
     console.log(`Error: ${err}`)
 })
