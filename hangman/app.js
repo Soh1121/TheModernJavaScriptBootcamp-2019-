@@ -30,12 +30,3 @@ getCurrentCountry().then((country) => {
     console.log(error)
 })
 
-/* 
-getLocation().then((location) => {
-    return getCountry(location.country)
-}).then((country) => {
-    console.log(country.name)
-}).catch((err) => {
-    console.log(`Error: ${err}`)
-})
- */
