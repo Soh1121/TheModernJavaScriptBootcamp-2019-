@@ -1,8 +1,8 @@
-#puzzle {
+#puzzle, button {
     color: red;
 }
 
-.warning {
+/* .warning {
     color: white;
     background-color: red;
-}
+} */
