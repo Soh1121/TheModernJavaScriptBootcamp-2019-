@@ -22,3 +22,12 @@ const getCountry = (countryCode) => {
     })
 }
 
+const getLocation = () => {
+    return fetch(`http://ipinfo.io/json?token=${ipInfo.accessToken}`).then((response) => {
+        if (response.status === 200) {
+            return response.json()
+        } else {
+            throw new Error('Unable to fetch data')
+        }
+    })
+}
