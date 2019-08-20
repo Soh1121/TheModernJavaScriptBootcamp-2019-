@@ -29,3 +29,8 @@ const getLocation = async () => {
         throw new Error('Unable to fetch the current location')
     }
 }
+
+const getCurrentCountry = async () => {
+    const currentCountryData = await getLocation()
+    return await getCountry(currentCountryData.country)
+}

@@ -24,6 +24,13 @@ getCountry('MX').then((country) => {
     console.log(`Error: ${err}`)
 })
 
+getCurrentCountry().then((country) => {
+    console.log(country.name)
+}).catch((error) => {
+    console.log(error)
+})
+
+/* 
 getLocation().then((location) => {
     return getCountry(location.country)
 }).then((country) => {
@@ -31,3 +38,4 @@ getLocation().then((location) => {
 }).catch((err) => {
     console.log(`Error: ${err}`)
 })
+ */
