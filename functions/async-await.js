@@ -5,12 +5,9 @@ const getDataPromise = (num) => new Promise((resolve, reject) => {
 })
 
 const processData = async () => {
-    let data = await getDataPromise(2)
+    let data = await getDataPromise('abc')
     data = await getDataPromise(data)
     return data
-    // getDataPromise(2).then(() => {
-    //     console.log(data)
-    // })
 }
 
 processData().then((data) => {
