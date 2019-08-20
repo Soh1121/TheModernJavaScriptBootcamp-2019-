@@ -25,14 +25,9 @@ getCountry('MX').then((country) => {
 })
 
 getLocation().then((location) => {
-    console.log(`You are currently in ${location.city} ${location.region} ${location.country}!`)
-    return location
-}).then((data) => {
-    getCountry(data.country).then((country) => {
-        console.log(country.name)
-    }).catch((err) => {
-        console.log(`Error: ${err}`)
-    })
+    return getCountry(location.country)
+}).then((country) => {
+    console.log(country.name)
 }).catch((err) => {
     console.log(`Error: ${err}`)
 })
