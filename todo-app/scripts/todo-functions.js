@@ -82,13 +82,16 @@ const generateTodoDOM = (todo) => {
         renderTodos(todos, filters)
     })
 
-    
-
     return todoEl
 }
 
 const generateSummaryDOM = (incompleteTodos) => {
     const summary = document.createElement('h2')
-    summary.textContent = `You have ${incompleteTodos.length} todos left`
+    const todo = incompleteTodos.length > 1 ? 'todos' : 'todo'
+    summary.textContent = `You have ${incompleteTodos.length} ${todo} left`
+    summary.classList.add('list-title')
     return summary
 }
+
+// 1. Add "list-title" class
+// 2. Pluralize (todos) unless you only have one (todo)
