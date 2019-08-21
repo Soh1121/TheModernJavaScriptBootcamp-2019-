@@ -13,7 +13,7 @@ window.addEventListener('keypress', (e) => {
 })
 
 const render = () => {
-    puzzleEl.textContent = game1.puzzle
+    puzzleEl.innerHTML = '<h1>test</h1>'
     guessesEl.textContent = game1.statusMessage
 }
 
