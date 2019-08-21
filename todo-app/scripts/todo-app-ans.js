@@ -14,23 +14,20 @@ document.querySelector('#search-text').addEventListener('input', (e) => {
     renderTodos(todos, filters)
 })
 
-// 1. Get a trimmed version of the input
-// 2. Only add a new todo if it has content
-
 document.querySelector('#new-todo').addEventListener('submit', (e) => {
+    const text = e.target.elements.text.value.trim()
     e.preventDefault()
-    const text = e.target.elements.text.value
-    const content = text.trim()
-    if (content !== '') {
+
+    if (text.length > 0) {
         todos.push({
-            id: generateUuid(),
-            text: content,
+            id: uuidv4(),
+            text: text,
             completed: false
         })
         saveTodos(todos)
         renderTodos(todos, filters)
+        e.target.elements.text.value = ''
     }
-    e.target.elements.text.value = ''
 })
 
 document.querySelector('#hide-completed').addEventListener('change', (e) => {
