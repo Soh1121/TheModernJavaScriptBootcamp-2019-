@@ -31,27 +31,26 @@ const toggleTodo = (id) => {
 }
 
 const renderTodos = (todos, filters) => {
+    const todoEl = document.querySelector('#todos')
     const filteredTodos = todos.filter((todo) => {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
-        
+
         return searchTextMatch && hideCompletedMatch
     })
 
     const incompleteTodos = filteredTodos.filter((todo) => !todo.completed)
 
-    if (incompleteTodos.length > 0) {
-        document.querySelector('#todos').innerHTML = ''
-        document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
+    todoEl.innerHTML = ''
+    todoEl.appendChild(generateSummaryDOM(incompleteTodos))
 
-        filteredTodos.forEach((todo) => document.querySelector('#todos').appendChild(generateTodoDOM(todo)))
+    if (incompleteTodos.length > 0) {
+        filteredTodos.forEach((todo) => todoEl.appendChild(generateTodoDOM(todo)))
     } else {
-        const todosEl = document.querySelector('#todos')
-        const pEl = document.createElement('p')
-        pEl.textContent = 'No to-dos to show'
-        pEl.classList.add('empty-message')
-        todosEl.innerHTML = ''
-        todosEl.appendChild(pEl)
+        const messageEl = document.createElement('p')
+        messageEl.classList.add('empty-message')
+        messageEl.textContent = 'No to-dos to show'
+        todoEl.appendChild(messageEl)
     }
 
     // If todos to show, render them
