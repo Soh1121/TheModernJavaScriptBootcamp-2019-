@@ -40,10 +40,22 @@ const renderTodos = (todos, filters) => {
 
     const incompleteTodos = filteredTodos.filter((todo) => !todo.completed)
 
-    document.querySelector('#todos').innerHTML = ''
-    document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
+    if (incompleteTodos.length > 0) {
+        document.querySelector('#todos').innerHTML = ''
+        document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
 
-    filteredTodos.forEach((todo) => document.querySelector('#todos').appendChild(generateTodoDOM(todo)))
+        filteredTodos.forEach((todo) => document.querySelector('#todos').appendChild(generateTodoDOM(todo)))
+    } else {
+        const todosEl = document.querySelector('#todos')
+        const pEl = document.createElement('p')
+        pEl.textContent = 'No to-dos to show'
+        pEl.classList.add('empty-message')
+        todosEl.innerHTML = ''
+        todosEl.appendChild(pEl)
+    }
+
+    // If todos to show, render them
+    // Else, p with class "empty-message" and message "No to-dos to show"
 }
 
 const generateTodoDOM = (todo) => {
