@@ -1,3 +1,1 @@
-export const scream = (text) => {
-    return text.toUpperCase() + '!'
-}
+export const scream = (text) => `${text.toUpperCase()}!`
