@@ -1,8 +1,10 @@
 import uuidv4 from 'uuid/v4'
+import isEmail from 'validator/lib/isEmail'
 import Hangman from './hangman'
 import getPuzzle from './requests'
 
 console.log(uuidv4())
+console.log(isEmail('foo@bar.com'))
 
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
