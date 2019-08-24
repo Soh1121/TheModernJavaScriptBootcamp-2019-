@@ -35,6 +35,16 @@ const createNote = () => {
     saveNotes()
 }
 
+// Remove a note from the list
+const removeNote = (id) => {
+    const noteIndex = notes.findIndex((note) => note.id === id)
+
+    if (noteIndex > -1) {
+        notes.splice(noteIndex, 1)
+        saveNotes()
+    }
+}
+
 notes = loadNotes()
 
-export { getNotes, createNote }
+export { getNotes, createNote, removeNote }
