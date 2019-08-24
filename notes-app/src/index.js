@@ -10,7 +10,6 @@ document.querySelector('#create-note').addEventListener('click', (e) => {
 })
 
 document.querySelector('#search-text').addEventListener('input', (e) => {
-    filters.searchText = e.target.value
     setFilters({
         searchText: e.target.value
     })
