@@ -11,4 +11,9 @@ const loadNotes = () => {
     }
 }
 
+// Expose notes from module
+const getNotes = () => notes
+
 notes = loadNotes()
+
+export { getNotes }
