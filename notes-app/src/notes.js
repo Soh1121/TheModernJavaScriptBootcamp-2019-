@@ -102,6 +102,7 @@ const updateNote = (id, updates) => {
     }
 
     saveNotes()
+    return note
 }
 
 notes = loadNotes()
