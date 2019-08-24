@@ -33,6 +33,8 @@ const createNote = () => {
         updatedAt: timestamp
     })
     saveNotes()
+
+    return id
 }
 
 // Remove a note from the list
@@ -46,7 +48,7 @@ const removeNote = (id) => {
 }
 
 // Sort your notes by one of three ways
-const sortNotes = (notes, sortBy) => {
+const sortNotes = (sortBy) => {
     if (sortBy === 'byEdited') {
         return notes.sort((a, b) => {
             if (a.updatedAt > b.updatedAt) {
