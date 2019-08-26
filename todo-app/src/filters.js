@@ -1,4 +1,8 @@
 // Set up filters default object
+const filters = {
+    searchText: '',
+    hideCompleted: false
+}
 
 // getFilters
 // Arguments: none
