@@ -4,6 +4,7 @@
 // --
 
 // Add necessary imports
+import { getFilters, setFilters } from './filters'
 
 // Render initial todos
 

@@ -1,4 +1,5 @@
 // Setup the empty todos array
+let todos = []
 
 // loadTodos
 // Arguments: none
