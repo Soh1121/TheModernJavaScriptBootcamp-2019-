@@ -1,4 +1,4 @@
-import uuidv4 fro 'uuid/v4'
+import uuidv4 from 'uuid/v4'
 
 // Setup the empty todos array
 let todos = []
@@ -69,4 +69,4 @@ const toggleTodo = (id) => {
 todos = loadTodos()
 
 // Make sure to call loadTodos and setup the exports
-export { getTodos, createTodo, removeTodo, toggleTodo }
+export { saveTodos, getTodos, createTodo, removeTodo, toggleTodo }
