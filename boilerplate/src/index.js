@@ -11,8 +11,6 @@ const team = {
 }
 printTeam(team.name, team.coach, ...team.players)
 
-const cities = ['Barcelona', 'Cape Town', 'Bordeaux']
-const citiesCopy = [...cities, 'Santiago']
-
+let cities = ['Barcelona', 'Cape Town', 'Bordeaux']
+cities = [...cities, 'Santiago']
 console.log(cities)
-console.log(citiesCopy)
