@@ -4,6 +4,7 @@
 // --
 
 // Add necessary imports
+import { createTodo } from './todos'
 import { getFilters, setFilters } from './filters'
 
 // Render initial todos
