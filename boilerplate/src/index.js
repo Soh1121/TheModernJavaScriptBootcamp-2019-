@@ -1,7 +1,8 @@
-const printTeam = (teamName, coach, ...players) => {
+const printTeam = (teamName, coach, firstPlayer, secondPlayer) => {
     console.log(`Team: ${teamName}`)
     console.log(`Coach: ${coach}`)
-    console.log(`Players: ${players.join(', ')}`)
+    // console.log(`Players: ${players.join(', ')}`)
+    console.log(firstPlayer, secondPlayer)
 }
 
 const team = {
