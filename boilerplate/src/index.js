@@ -14,8 +14,8 @@ console.log(calculateAverage('age', 0, 100, 88, 64))
 // Coach: Casey Penn
 // Players: Marge, Aiden, Herbert, Sherry
 
-const printTeam = (team, coach, ...players) => {
-    console.log(`Team: ${team}`)
+const printTeam = (teamName, coach, ...players) => {
+    console.log(`Team: ${teamName}`)
     console.log(`Coach: ${coach}`)
     console.log(`Players: ${players.join(', ')}`)
 }
