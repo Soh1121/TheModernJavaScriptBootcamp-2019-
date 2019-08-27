@@ -6,4 +6,18 @@ const calculateAverage = (thing, ...numbers) => {
     return `The average ${thing} is ${average}`
 }
 
-console.log(calculateAverage('grade', 0, 100, 88, 64))
+console.log(calculateAverage('age', 0, 100, 88, 64))
+
+// Create printTeam that takes team name, coach, and players
+
+// Team: Liberty
+// Coach: Casey Penn
+// Players: Marge, Aiden, Herbert, Sherry
+
+const printTeam = (team, coach, ...players) => {
+    console.log(`Team: ${team}`)
+    console.log(`Coach: ${coach}`)
+    console.log(`Players: ${players.join(', ')}`)
+}
+
+printTeam('Liberty', 'Casey Penn', 'Marge', 'Aiden', 'Herbert', 'Sherry')
