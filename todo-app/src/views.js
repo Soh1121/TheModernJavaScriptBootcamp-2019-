@@ -1,14 +1,11 @@
+import { getTodos, toggleTodo, removeTodo } from "./todos";
 import { getFilters } from "./filters";
-import { saveTodos, getTodos, removeTodo, toggleTodo } from "./todos";
 
-// renderTodos
-// Arguments: none
-// Return value: none
+// Render application todos based on filters
 const renderTodos = () => {
     const todoEl = document.querySelector('#todos')
     const filters = getFilters()
-    const todos = getTodos()
-    const filteredTodos = todos.filter((todo) => {
+    const filteredTodos = getTodos().filter((todo) => {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
 
@@ -30,9 +27,7 @@ const renderTodos = () => {
     }
 }
 
-// generateTodoDOM
-// Arguments: todo
-// Return value: the todo element
+// Get the DOM elements for an individual note
 const generateTodoDOM = (todo) => {
     const todoEl = document.createElement('label')
     const containerEl = document.createElement('div')
@@ -46,7 +41,6 @@ const generateTodoDOM = (todo) => {
     containerEl.appendChild(checkbox)
     checkbox.addEventListener('change', () => {
         toggleTodo(todo.id)
-        saveTodos()
         renderTodos()
     })
 
@@ -65,16 +59,13 @@ const generateTodoDOM = (todo) => {
     todoEl.appendChild(removeButton)
     removeButton.addEventListener('click', () => {
         removeTodo(todo.id)
-        saveTodos()
         renderTodos()
     })
 
     return todoEl
 }
 
-// generateSummaryDOM
-// Arguments: incompletedTodos
-// Return value: the summary element
+// Get the DOM elements for list summary
 const generateSummaryDOM = (incompletedTodos) => {
     const summary = document.createElement('h2')
     const plural = incompletedTodos.length === 1 ? '' : 's'
@@ -83,5 +74,4 @@ const generateSummaryDOM = (incompletedTodos) => {
     return summary
 }
 
-// Make sure to set up the exports
-export { renderTodos }
+export { generateTodoDOM, renderTodos, generateSummaryDOM }
