@@ -25,7 +25,25 @@ let newHouse = {
     bedrooms: 3,
     ...house
 }
-newHouse.yearBuilt = 2018
 
 console.log(house)
 console.log(newHouse)
+
+// Create a person object with name and age
+// Create a location object with city and country
+// Create a new overview object and use the spread operator to add all four properties
+const person = {
+    name: 'Andrew',
+    year: 28
+}
+
+const location = {
+    city: 'Filadelfier',
+    country: 'United states America'
+}
+
+const overview = {
+    ...person,
+    ...location
+}
+console.log(overview)
