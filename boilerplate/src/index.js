@@ -23,6 +23,7 @@ let house = {
 let newHouse = {
     ...house
 }
+newHouse.yearBuilt = 2018
 
 console.log(house)
 console.log(newHouse)
