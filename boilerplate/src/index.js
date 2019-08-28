@@ -22,8 +22,8 @@ let house = {
 }
 let newHouse = {
     basement: true,
-    ...house,
-    bedrooms: 3
+    bedrooms: 3,
+    ...house
 }
 newHouse.yearBuilt = 2018
 
