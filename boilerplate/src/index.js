@@ -34,14 +34,12 @@ console.log(newHouse)
 // Create a new overview object and use the spread operator to add all four properties
 const person = {
     name: 'Andrew',
-    year: 28
+    year: 27
 }
-
 const location = {
-    city: 'Filadelfier',
-    country: 'United states America'
+    city: 'Philadelphia',
+    country: 'USA'
 }
-
 const overview = {
     ...person,
     ...location
