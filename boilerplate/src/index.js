@@ -14,3 +14,15 @@ printTeam(team.name, team.coach, ...team.players)
 let cities = ['Barcelona', 'Cape Town', 'Bordeaux']
 cities = [...cities, 'Santiago']
 console.log(cities)
+
+let house = {
+    bedrooms: 2,
+    bathrooms: 1.5,
+    yearBuilt: 2017
+}
+let newHouse = {
+    ...house
+}
+
+console.log(house)
+console.log(newHouse)
