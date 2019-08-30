@@ -4,8 +4,10 @@ const todo = {
     completed: false
 }
 
-const text = todo.text
-const completed = todo.completed
+// const text = todo.text
+// const completed = todo.completed
+
+const { text, completed } = todo
 
 console.log(text)
 console.log(completed)
