@@ -4,8 +4,8 @@ const todo = {
     completed: false
 }
 
-const printTodo = (todo) => {
-    console.log(`${todo.text}: ${todo.completed}`)
+const printTodo = ({ text, completed }) => {
+    console.log(`${text}: ${completed}`)
 }
 printTodo(todo)
 
