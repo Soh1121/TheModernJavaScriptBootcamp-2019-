@@ -14,8 +14,8 @@ console.log(completed)
 console.log(details)
 console.log(others)
 
-const age = [65, 0, 13, 21]
-const [firstAge, secondAge, , lastAge] = age
+const age = [65, 0, 13]
+const [firstAge, secondAge, , lastAge = 123] = age
 
 console.log(firstAge)
 console.log(secondAge)
