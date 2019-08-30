@@ -7,7 +7,7 @@ const todo = {
 // const text = todo.text
 // const completed = todo.completed
 
-const { text, completed } = todo
+const { text:todoText, completed } = todo
 
-console.log(text)
+console.log(todoText)
 console.log(completed)
