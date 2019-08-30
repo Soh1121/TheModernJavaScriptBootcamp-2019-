@@ -5,13 +5,13 @@ const filters = {
 
 const getFilters = () => filters
 
-const setFilters = (updates) => {
-    if (typeof updates.searchText === 'string') {
-        filters.searchText = updates.searchText
+const setFilters = ({ searchText, hideCompleted}) => {
+    if (typeof searchText === 'string') {
+        filters.searchText = searchText
     }
     if (typeof filters.hideCompleted === 'boolean') {
-        filters.hideCompleted = updates.hideCompleted
+        filters.hideCompleted = hideCompleted
     }
 }
 
-export { getFilters, setFilters}
+export { getFilters, setFilters }
