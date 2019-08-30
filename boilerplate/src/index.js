@@ -7,7 +7,8 @@ const todo = {
 // const text = todo.text
 // const completed = todo.completed
 
-const { text:todoText, completed } = todo
+const { text:todoText, completed, details = 'No details provided' } = todo
 
 console.log(todoText)
 console.log(completed)
+console.log(details)
