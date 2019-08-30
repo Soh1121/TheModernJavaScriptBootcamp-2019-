@@ -4,8 +4,10 @@ const todo = {
     completed: false
 }
 
-// const text = todo.text
-// const completed = todo.completed
+const printTodo = (todo) => {
+    console.log(`${todo.text}: ${todo.completed}`)
+}
+printTodo(todo)
 
 const { text:todoText, completed, details = 'No details provided', ...others } = todo
 
