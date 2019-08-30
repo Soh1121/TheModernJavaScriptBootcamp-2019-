@@ -5,11 +5,11 @@ const filters = {
 
 const getFilters = () => filters
 
-const setFilters = ({ searchText, hideCompleted}) => {
+const setFilters = ({ searchText, hideCompleted }) => {
     if (typeof searchText === 'string') {
         filters.searchText = searchText
     }
-    if (typeof filters.hideCompleted === 'boolean') {
+    if (typeof hideCompleted === 'boolean') {
         filters.hideCompleted = hideCompleted
     }
 }
